@@ -3,12 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #00203f;
+  --secondary: #adefd1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-sans: var(--font-sansita);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -16,11 +20,73 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #00203f;
+    --secondary: #adefd1;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sansita), cursive, Arial, Helvetica, sans-serif;
+}
+
+/* Custom styles for food website */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero-bg.jpg') center/cover;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.menu-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chef-card {
+  transition: transform 0.3s ease;
+}
+
+.chef-card:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item {
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.blog-card {
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
