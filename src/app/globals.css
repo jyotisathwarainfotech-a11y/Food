@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #00203f;
-  --secondary: #adefd1;
+  --primary: #1d2527;
+  --secondary: #d4a155;
 }
 
 @theme inline {
@@ -20,8 +20,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --primary: #00203f;
-    --secondary: #adefd1;
+    --primary: #1d2527;
+    --secondary: #d4a155;
   }
 }
 
@@ -89,4 +89,14 @@ body {
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }

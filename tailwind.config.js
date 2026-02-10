@@ -14,7 +14,7 @@ module.exports = {
           200: '#99cbf5',
           300: '#66b0ef',
           400: '#3396ea',
-          500: '#00203f', // Your primary dark blue color
+          500: '#1d2527', // Your primary dark blue color
           600: '#001a33',
           700: '#001426',
           800: '#000f1a',
@@ -26,7 +26,7 @@ module.exports = {
           200: '#dffbefe',
           300: '#cfebea',
           400: '#bfeae5',
-          500: '#adefd1', // Your secondary light green color
+          500: '#d4a155', // Your secondary light green color
           600: '#8cd9b3',
           700: '#6bc394',
           800: '#4aaf75',

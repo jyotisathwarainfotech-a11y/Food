@@ -214,7 +214,7 @@ export default function CombinedHeader() {
               className={`hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-md font-semibold ${
                 scrolled 
                   ? 'bg-secondary text-primary hover:bg-secondary/90' 
-                  : 'bg-primary text-white hover:bg-primary/90'
+                  : 'bg-primary text-secondary hover:bg-primary/90'
               }`}
             >
               Book Now →
