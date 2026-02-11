@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLocationArrow, FaUser } from "react-icons/fa";
+import { useCart } from "../context/CartContext";
 
 
 export default function CombinedHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { getTotalItems } = useCart();
   
 
   // Track scroll position to determine which header to show
@@ -160,14 +162,14 @@ export default function CombinedHeader() {
                   Chefs
                 </Link>
                 <Link 
-                  href="/gallery" 
+                  href="/cart" 
                   className={`block px-4 py-2 text-sm ${
                     scrolled 
                       ? 'text-secondary hover:bg-secondary/80 hover:text-primary' 
                       : 'text-primary hover:bg-primary/80 hover:text-secondary'
                   }`}
                 >
-                  Gallery
+                  Cart
                 </Link>
                 <Link 
                   href="/blog" 
@@ -236,7 +238,7 @@ export default function CombinedHeader() {
                 ? 'bg-secondary text-primary' 
                 : 'bg-primary text-secondary'
             }`}>
-              3
+              {getTotalItems()}
             </span>
           </Link>
 
@@ -271,8 +273,8 @@ export default function CombinedHeader() {
                 <Link href="/chefs" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
                   Chefs
                 </Link>
-                <Link href="/gallery" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
-                  Gallery
+                <Link href="/cart" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+                  Cart
                 </Link>
                 <Link href="/blog" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
                   Blog

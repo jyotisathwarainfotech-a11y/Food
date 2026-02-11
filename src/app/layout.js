@@ -3,6 +3,7 @@ import { Sansita } from "next/font/google";
 import "./globals.css";
 import CombinedHeader from "../components/CombinedHeader";
 import Footer from "../components/Footer";
+import { CartProvider } from "../context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sansita.variable} antialiased`}
       >
-        <CombinedHeader />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <CombinedHeader />
+          <main>{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

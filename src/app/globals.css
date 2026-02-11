@@ -65,14 +65,6 @@ body {
   transform: scale(1.05);
 }
 
-.gallery-item {
-  transition: all 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05);
-}
-
 .blog-card {
   transition: all 0.3s ease;
 }

@@ -1,8 +1,11 @@
 "use client"
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChefHat, Leaf, Star } from "lucide-react";
+import { ChefHat, Facebook, Heart, Leaf, Plus, ShoppingCart, Star, UtensilsCrossed } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { useCart } from "../context/CartContext";
 
 const menuData = {
   "Event Creating": [
@@ -31,15 +34,51 @@ const menuData = {
   ],
 };
 
+const chefs = [
+  {
+    name: "Jimmie K. Cryer",
+    role: "CEO & Founder",
+    image: "/images/chef1.png",
+  },
+  {
+    name: "Keneth Conroy",
+    role: "Senior Chef",
+    image: "/images/chef2.png",
+  },
+  {
+    name: "Antony Taylor",
+    role: "Assistant Chef",
+    image: "/images/chef3.png",
+  },
+  {
+    name: "Jame Radley",
+    role: "Chef Cook",
+    image: "/images/chef4.png",
+  },
+];
+
+const products = [
+    { name: "Burger Deluxe", image: "/images/sell1.png", price: "$110.46" },
+    { name: "Fried Chicken", image: "/images/sell2.png", price: "$60.50" },
+    { name: "Spicy Wings", image: "/images/sell3.png", price: "$50.00" },
+    { name: "Italian Pizza", image: "/images/sell4.jpg", price: "$80.00" },
+    { name: "Pasta Special", image: "/images/sell5.jpg", price: "$95.00" },
+  ];
+
 
 export default function Home() {
    const [activeTab, setActiveTab] = useState("Event Creating");
+   const { addToCart } = useCart();
+
+   const handleAddToCart = (item) => {
+    addToCart(item);
+    console.log("Added to cart:", item);
+  };
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section
-        className="relative min-h-[90vh] flex items-center text-white overflow-hidden"
+      <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden"
         style={{
           backgroundImage: "url('/images/img2.jpg')",
           backgroundSize: "cover",
@@ -110,7 +149,7 @@ export default function Home() {
 
       {/* Featured Menu Items */}
       <section className="py-20 bg-gradient-to-r from-primary to-secondary text-white">
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div>
@@ -197,7 +236,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-24 bg-gradient-to-r from-primary to-secondary text-white overflow-hidden">
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT IMAGE AREA */}
         <motion.div
@@ -485,6 +524,195 @@ export default function Home() {
 
         </div>
       </div>
+    </section>
+    
+    {/* Chef Section */}
+    <section className="relative py-24 bg-primary text-white overflow-hidden">
+      <div className=" mx-auto px-4">
+        
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <p className="text-secondary text-sm tracking-widest uppercase mb-3 flex items-center justify-center gap-2">
+            <UtensilsCrossed className="w-5 h-5" />
+            Meet Our Exclusive
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Exclusive & Master Chefs
+          </h2>
+        </div>
+
+        {/* Chef Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {chefs.map((chef, index) => (
+            <div
+              key={index}
+              className="group relative bg-white/5 backdrop-blur-xl 
+              rounded-3xl overflow-hidden border border-white/10 
+              hover:border-secondary transition duration-500"
+            >
+
+              {/* Image */}
+              <div className="relative overflow-hidden">
+                <Image
+                  src={chef.image}
+                  alt={chef.name}
+                  width={400}
+                  height={500}
+                  className="w-full h-[420px] object-cover 
+                  group-hover:scale-110 transition duration-700"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t 
+                from-black/80 via-black/30 to-transparent 
+                opacity-70 group-hover:opacity-90 transition duration-500" />
+
+                {/* Social Icons (Hover Effect) */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 
+                flex gap-3 opacity-0 group-hover:opacity-100 
+                translate-y-5 group-hover:translate-y-0 
+                transition duration-500">
+                  
+                  <div className="w-9 h-9 rounded-full bg-secondary 
+                  flex items-center justify-center cursor-pointer hover:scale-110 transition">
+                    <FaFacebook size={16} />
+                  </div>
+
+                  <div className="w-9 h-9 rounded-full bg-secondary 
+                  flex items-center justify-center cursor-pointer hover:scale-110 transition">
+                    <FaInstagram size={16} />
+                  </div>
+
+                  <div className="w-9 h-9 rounded-full bg-secondary 
+                  flex items-center justify-center cursor-pointer hover:scale-110 transition">
+                    <FaTwitter size={16} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Info */}
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold group-hover:text-secondary transition">
+                  {chef.name}
+                </h3>
+                <p className="text-secondary text-sm mt-1">
+                  {chef.role}
+                </p>
+              </div>
+
+              {/* Decorative Glow Effect */}
+              <div className="absolute -inset-1 rounded-3xl 
+              bg-gradient-to-r from-secondary/30 to-transparent 
+              opacity-0 group-hover:opacity-100 blur-xl 
+              transition duration-700 -z-10"></div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    {/* Products Section */}
+    <section className="py-24 bg-primary overflow-hidden">
+      <div className="mx-auto px-4">
+
+        {/* Heading */}
+        <div className="relative mb-16">
+          <div className="absolute right-0 top-0">
+            <Link
+              href="/menu"
+              className="px-8 py-3 bg-white text-black 
+              hover:bg-secondary hover:text-white 
+              rounded-xl shadow-md font-semibold 
+              transition duration-300 ease-in-out"
+            >
+              SEE ALL →
+            </Link>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-extrabold">
+              <span className="text-secondary">BEST SELLING</span>{" "}
+              <span className="text-white italic">DISHES</span>
+            </h2>
+
+            <p className="text-white/80 mt-5 text-base md:text-lg leading-relaxed">
+              Discover our most loved and top-rated dishes crafted with premium 
+              ingredients and authentic flavors.
+            </p>
+          </div>
+        </div>
+
+        {/* Auto Scroll */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex gap-8 animate-scroll hover:[animation-play-state:paused] m-4">
+
+            {[...products, ...products].map((item, index) => (
+              <div
+                key={index}
+                className="min-w-[300px] bg-[#f5efe6] rounded-3xl p-6 
+                relative group transition duration-500
+                hover:scale-105 hover:bg-white 
+                hover:shadow-[8px_8px_0px_#d4a155]"
+              >
+
+                {/* Wishlist */}
+                <div className="absolute top-4 right-4 text-secondary">
+                  <Heart size={18} />
+                </div>
+
+                {/* Image */}
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={200}
+                    height={200}
+                    className="object-contain transition duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                {/* Info */}
+                <h3 className="font-bold text-primary text-lg mb-2">
+                  {item.name}
+                </h3>
+
+                <p className="text-secondary font-bold text-lg mb-6">
+                  {item.price}
+                </p>
+
+                {/* Add To Cart Button (Hidden by default) */}
+                <button
+                  onClick={() => handleAddToCart(item)}
+                  className="absolute bottom-0 left-0 w-full 
+                  bg-secondary text-white py-3 
+                  rounded-b-3xl opacity-0 
+                  group-hover:opacity-100 
+                  transition duration-300"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Animation */}
+      <style jsx>{`
+        .animate-scroll {
+          animation: scroll 25s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
     
     </div>
