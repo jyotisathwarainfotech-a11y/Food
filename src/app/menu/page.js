@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-
+ 
 const pizzaMenu = [
   { id: 1, name: "Margherita Pizza", desc: "Cheese, fresh basil", price: 20.99, img: "/images/pizza1.png" },
   { id: 2, name: "Pepperoni Pizza", desc: "Spicy pepperoni, mozzarella", price: 25.99, img: "/images/pizza2.png" },
@@ -24,11 +24,11 @@ const sushiMenu = [
 ];
 
 const images = [
-    "/images/home1.png",
-    "/images/img1.jpg",
+    "/images/roll1.webp",
+    "/images/roll2.jpg",
+    "/images/home2.jpg",
+    "/images/home3.jpg",
     "/images/img2.jpg",
-    "/images/img3.jpg",
-    "/images/pizza1.png",
     "/images/home2.jpg",
   ];
 

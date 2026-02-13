@@ -1,11 +1,12 @@
 "use client"
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ChefHat, Facebook, Heart, Leaf, Plus, ShoppingCart, Star, UtensilsCrossed } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChefHat, Heart, Leaf, Minus, Plus, ShoppingCart, Star, UtensilsCrossed } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
+
 
 const menuData = {
   "Event Creating": [
@@ -66,9 +67,34 @@ const products = [
   ];
 
 
+const faqData = [
+  {
+    question: "How is our handmade dough prepared?",
+    answer: "Our dough is prepared daily using organic flour and filtered water, then cold-fermented for 48 hours to ensure maximum flavor and a light, airy crust."
+  },
+  {
+    question: "Do you offer vegan or gluten-free options?",
+    answer: "Absolutely! We offer cauliflower-based crusts and high-quality vegan cheese. Just let our server know about your dietary requirements."
+  },
+  {
+    question: "What makes our 'Secret Sauce' so special?",
+    answer: "We use San Marzano tomatoes imported directly from Italy, simmered with fresh basil and a blend of 12 secret herbs for 6 hours."
+  },
+  {
+    question: "Can I customize my own pizza toppings?",
+    answer: "Yes, you can be the chef! Choose from over 30 fresh ingredients to create your perfect masterpiece."
+  },
+  {
+    question: "How long has the restaurant been serving food?",
+    answer: "We have been serving delicious food for over 20 years, and our passion for cooking has only grown stronger over the years."
+  }
+];
+
+
 export default function Home() {
    const [activeTab, setActiveTab] = useState("Event Creating");
    const { addToCart } = useCart();
+   const [activeIndex, setActiveIndex] = useState(0);
 
    const handleAddToCart = (item) => {
     addToCart(item);
@@ -713,6 +739,199 @@ export default function Home() {
           }
         }
       `}</style>
+    </section>
+
+    {/* Testimonials */}
+    <section className="relative py-24 bg-primary overflow-hidden">
+
+      {/* Decorative Elements */}
+      <img src="/images/cartoon4.png" className="absolute left-10 top-10 w-24 opacity-90" alt="" />
+      <img src="/images/img4.png" className="absolute -left-10 bottom-10 w-40" alt="" />
+      <img src="/images/takos1.png" className="absolute right-4 top-4 w-44" alt="" />
+
+      <div className="container mx-auto px-6">
+
+        {/* Heading Section */}
+        <div className="text-center mb-20">
+          <p className="text-secondary font-bold tracking-[0.2em] text-sm mb-2">
+            TESTIMONIALS
+          </p>
+          <h2 className="text-4xl md:text-5xl font-black text-white">
+            OUR CUSTOMERS <span className="text-secondary uppercase">Feedback</span>
+          </h2>
+          {/* Decorative Divider */}
+          <div className="flex justify-center items-center mt-4 gap-4">
+             <div className="h-[2px] w-12 bg-secondary rounded-full"></div>
+             <div className="w-3 h-3 border-2 border-secondary rounded-full"></div>
+             <div className="h-[2px] w-12 bg-secondary rounded-full"></div>
+          </div>
+        </div>
+
+        {/* Testimonials Grid */}
+        <div className="grid lg:grid-cols-2 gap-y-20 gap-x-10 max-w-7xl mx-auto">
+
+          {/* LEFT TESTIMONIAL (Victoria) */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative flex flex-col items-start"
+          >
+            {/* The Quote Card */}
+            <div className="bg-[#fdf6e9] rounded-tl-[100px] rounded-tr-[100px] rounded-bl-[100px] p-10 md:p-14 pb-20 w-full relative min-h-[300px]">
+              <div className="text-secondary mb-4">
+                 <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V8H4.01697C7.33068 8 10.017 10.6863 10.017 14V21H3.01697Z" /></svg>
+              </div>
+              <p className="text-primary text-lg italic leading-relaxed max-w-[65%]">
+                "Every pizza starts with our hand-tossed dough, made fresh daily and topped with our signature sauce crafted from ripe tomatoes and secret herbs."
+              </p>
+            </div>
+
+            {/* Person Image - Positioned Absolute to overlap */}
+            <div className="absolute -right-4 bottom-12 w-1/2 z-10">
+              <img src="/images/1.png" alt="Victoria" className="w-full h-auto object-contain" />
+            </div>
+
+            {/* Name Label - Positioned to match image */}
+            <div className="bg-secondary text-white rounded-tr-[50px] rounded-br-[50px] rounded-bl-[50px] px-10 py-5 -mt-10 relative z-20 shadow-lg min-w-[280px]">
+              <h4 className="font-bold text-xl">Victoria Wotton</h4>
+              <p className="text-sm opacity-90">Fementum Odio Co.</p>
+              <div className="flex mt-2 text-primary text-sm">★★★★★</div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT TESTIMONIAL (Emma) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative flex flex-col items-start"
+          >
+            {/* The Quote Card */}
+            <div className="bg-[#fdf6e9] rounded-tl-[100px] rounded-tr-[100px] rounded-br-[100px] p-10 md:p-14 pb-20 w-full relative min-h-[300px]">
+              <div className="text-secondary mb-4">
+                 <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V8H4.01697C7.33068 8 10.017 10.6863 10.017 14V21H3.01697Z" /></svg>
+              </div>
+              <p className="text-primary text-lg italic leading-relaxed max-w-[65%]">
+                "Freshly tossed dough forms the base of every pizza, of the name topped with a homemade sauce made from juicy tomatoes and our special herb recipe."
+              </p>
+            </div>
+
+            {/* Person Image */}
+            <div className="absolute -right-4 bottom-12 w-1/2 z-10">
+              <img src="/images/2.png" alt="Emma" className="w-full h-auto object-contain" />
+            </div>
+
+            {/* Name Label */}
+            <div className="bg-secondary text-white rounded-tl-[50px] rounded-br-[50px] rounded-bl-[50px] px-10 py-5 -mt-10 relative z-20 shadow-lg min-w-[280px]">
+              <h4 className="font-bold text-xl">Emma Mia</h4>
+              <p className="text-sm opacity-90">Fementum Odio Co.</p>
+              <div className="flex mt-2 text-primary text-sm">★★★★★</div>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section className="relative py-24 bg-primary overflow-hidden">
+      <div className="absolute inset-0">
+        <img 
+          src="/images/home2.jpg"   
+          alt="FAQ Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      {/* Decorative Background Elements */}
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16">
+          
+          {/* Left Side: Static Info */}
+          <div className="lg:w-1/3">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-secondary font-bold tracking-widest text-sm mb-4 uppercase">
+                Common Inquiries
+              </p>
+              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
+                HAVE ANY <span className="text-secondary">QUESTIONS?</span>
+              </h2>
+              <p className="text-white mb-8 leading-relaxed">
+                We're here to help! If you don't find what you're looking for, feel free to reach out to our support team.
+              </p>
+              
+              {/* Unique Support Card */}
+              <div className="bg-primary/60 p-8 rounded-[40px] text-white flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                  <div className="text-4xl flex items-center justify-center">
+                    <Image src="/images/home6.png"
+                    className="w-32 h-18"
+                     alt="Support" width={60} height={60} />
+                  </div>
+                </div>
+                <h4 className="font-bold text-xl text-secondary mb-2">Still Curious?</h4>
+                <p className="text-green-100 text-sm mb-6">Ask us anything about our ingredients or sourcing.</p>
+                <button className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-colors">
+                  Contact Us
+                </button>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Side: Animated Accordion */}
+          <div className="lg:w-2/3 space-y-4">
+            {faqData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                 whileHover={{ scale: 1.03 }} 
+                viewport={{ once: true }}
+                className={`overflow-hidden rounded-3xl border-2 transition-all duration-300 ${
+                  activeIndex === index 
+                  ? "border-secondary bg-secondary/10 shadow-xl scale-[1.02]" 
+                  : "border-secondary bg-primary"
+                }`}
+              >
+                <button
+                  onClick={() => setActiveIndex(activeIndex === index ? -1 : index)}
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left"
+                >
+                  <span className={`text-lg md:text-xl font-bold ${activeIndex === index ? "text-secondary" : "text-white"}`}>
+                    {item.question}
+                  </span>
+                  <div className={`p-2 rounded-full transition-transform duration-300 ${activeIndex === index ? "bg-primary text-white rotate-180" : "bg-gray-100 text-gray-500"}`}>
+                    {activeIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                  </div>
+                </button>
+
+                <AnimatePresence>
+                  {activeIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <div className="px-6 md:px-8 pb-8 text-white leading-relaxed border-t border-secondary pt-4">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
     
     </div>

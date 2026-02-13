@@ -1,6 +1,8 @@
 'use client';
-
+import Image from 'next/image';
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, HelpCircle, MessageSquare, Phone, Mail } from 'lucide-react';
 
 const faqData = [
   {
@@ -32,28 +34,17 @@ const faqData = [
     id: 6,
     question: "Do you have private dining options?",
     answer: "Yes, we have two private dining rooms that can accommodate groups of 12-30 people. Perfect for corporate events, birthdays, and special celebrations."
-  },
-  {
-    id: 7,
-    question: "Are children welcome?",
-    answer: "Absolutely! We have a kids' menu with smaller portions and family-friendly options. High chairs and booster seats are available upon request."
-  },
-  {
-    id: 8,
-    question: "Do you offer takeout?",
-    answer: "Yes, takeout is available during all operating hours. You can order online, by phone, or in person. Orders typically ready within 20-30 minutes."
-  },
-  {
-    id: 9,
-    question: "What is your cancellation policy?",
-    answer: "For reservations, we request 24 hours' notice for cancellations. For private events, a 48-hour notice is required. Cancellations with less notice may be subject to a fee."
-  },
-  {
-    id: 10,
-    question: "Do you accommodate food allergies?",
-    answer: "Yes, we take food allergies very seriously. Please inform us of any allergies when making your reservation, and our staff will work with you to ensure a safe dining experience."
   }
 ];
+
+const images = [
+    "/images/roll1.webp",
+    "/images/roll2.jpg",
+    "/images/home2.jpg",
+    "/images/home3.jpg",
+    "/images/img2.jpg",
+    "/images/home2.jpg",
+  ];
 
 export default function FAQPage() {
   const [openId, setOpenId] = useState(null);
@@ -63,120 +54,160 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions about our restaurant, services, and policies
-          </p>
-        </div>
+    <>
+    {/* --- HERO SECTION --- */}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
 
-        {/* FAQ Content */}
-        <div className="max-w-4xl mx-auto">
+      {/* Animated Gradient Glow Background */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0"
+      >
+        <div className="absolute top-[-150px] left-[-150px] w-[400px] h-[400px] bg-orange-500/20 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[-150px] right-[-150px] w-[400px] h-[400px] bg-yellow-500/20 rounded-full blur-[120px] animate-pulse"></div>
+      </motion.div>
+
+      {/* Floating Icon Animation */}
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: [0, -15, 0], opacity: 1 }}
+        transition={{ duration: 4, repeat: Infinity }}
+        className="absolute top-20 left-20 hidden md:block text-orange-400"
+      >
+        <HelpCircle size={60} />
+      </motion.div>
+
+      <div className="container mx-auto px-4 relative z-10 text-center">
+
+        {/* Badge */}
+        <motion.span
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="inline-block px-6 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold tracking-widest uppercase backdrop-blur-md"
+        >
+          FAQ • Support Center
+        </motion.span>
+
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-6 text-5xl md:text-7xl font-black tracking-tight leading-tight"
+        >
+          Got Questions? <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500">
+            We’ve Got Answers.
+          </span>
+        </motion.h1>
+
+        {/* Paragraph */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="mt-6 text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+        >
+          Explore everything you need to know about reservations, menu details,
+          private dining, and our culinary experience — all in one place.
+        </motion.p>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-10"
+        >
+          <button className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300">
+            Browse FAQs
+          </button>
+        </motion.div>
+
+      </div>
+    </section>
+
+      {/* --- FAQ QUESTIONS --- */}
+      <section className="py-20 relative bg-primary">
+        <div className="container mx-auto px-4 max-w-4xl">
           <div className="space-y-4">
-            {faqData.map((faq) => (
-              <div key={faq.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            {faqData.map((faq, index) => (
+              <motion.div
+                key={faq.id}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`group border rounded-3xl transition-all duration-300 ${
+                  openId === faq.id 
+                  ? 'bg-white/10 border-orange-500/50 shadow-[0_0_30px_rgba(249,115,22,0.1)]' 
+                  : 'bg-white/5 border-white/10 hover:border-white/20'
+                }`}
+              >
                 <button
-                  onClick={() => toggleFAQ(faq.id)}
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
+                  className="w-full p-6 md:p-8 text-left flex justify-between items-center gap-4"
                 >
-                  <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
-                  <svg
-                    className={`h-6 w-6 text-orange-600 transition-transform duration-300 ${
-                      openId === faq.id ? 'rotate-180' : ''
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                {openId === faq.id && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-600">{faq.answer}</p>
+                  <div className="flex items-center gap-4">
+                    <span className={`text-xl font-bold ${openId === faq.id ? 'text-secondary' : 'text-secondary'}`}>
+                      0{index + 1}
+                    </span>
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-200 group-hover:text-white transition-colors">
+                      {faq.question}
+                    </h3>
                   </div>
-                )}
-              </div>
+                  <div className={`p-2 rounded-full transition-transform duration-300 ${openId === faq.id ? 'bg-primary text-white rotate-180' : 'bg-primary text-white'}`}>
+                    <ChevronDown size={20} />
+                  </div>
+                </button> 
+
+                <AnimatePresence>
+                  {openId === faq.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-8 pb-8 md:px-16 text-white/60 leading-relaxed text-lg border-t border-white/5 pt-4">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
 
-          {/* Contact Section */}
-          <div className="mt-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 text-white text-center">
-            <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-            <p className="text-orange-100 mb-6">
-              Our friendly team is here to help you with any additional questions or concerns
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <div className="text-3xl mb-2">📞</div>
-                <h3 className="font-bold mb-2">Call Us</h3>
-                <p className="text-sm">(123) 456-7890</p>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <div className="text-3xl mb-2">✉️</div>
-                <h3 className="font-bold mb-2">Email Us</h3>
-                <p className="text-sm">info@fooddelight.com</p>
-              </div>
-              <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                <div className="text-3xl mb-2">💬</div>
-                <h3 className="font-bold mb-2">Live Chat</h3>
-                <p className="text-sm">Available 24/7</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Restaurant Policies</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Gratuity automatically added to parties of 6 or more</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Valid ID required for alcohol service</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Pets welcome in outdoor seating area</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>20% deposit required for private events</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Quick Facts</h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Established in 2010</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Seating capacity: 120 guests</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Parking available on-site</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-600 font-bold mr-2">•</span>
-                  <span>Wheelchair accessible</span>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="bg-primary overflow-hidden">
+            <div className="relative w-full">
+      
+              <div className="flex w-max animate-scroll gap-2">
+                {[...images, ...images].map((img, index) => (
+                  <div
+                    key={index}
+                    className="w-[300px] h-[200px] flex-shrink-0 rounded-xl overflow-hidden"
+                  >
+                    <Image
+                      src={img}
+                      alt="food"
+                      width={300}
+                      height={200}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+      
+            </div>
+          </section>
+      </>
   );
 }

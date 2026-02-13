@@ -94,7 +94,7 @@ export default function CombinedHeader() {
   // Main header section (always present)
   const renderMainHeader = () => (
     <header className={`sticky top-0 z-50 ${scrolled ? 'bg-primary shadow-md' : 'bg-secondary'}`}>
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-18 flex items-center justify-between">
 
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -129,7 +129,7 @@ export default function CombinedHeader() {
               onClick={toggleAboutDropdown}
               onMouseEnter={() => setIsAboutDropdownOpen(true)  }
               onMouseLeave={() => setIsAboutDropdownOpen(false)}
-              className={`hover:text-primary flex items-center gap-1 ${scrolled ? 'text-secondary' : 'text-primary'}`}
+              className={`hover:text-primary flex items-center gap-1 ${scrolled ? 'hover:text-secondary text-secondary' : 'text-primary'}`}
             >
               Pages ▾
             </button>
@@ -258,28 +258,28 @@ export default function CombinedHeader() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className={`md:hidden ${scrolled ? 'bg-white' : 'bg-[#0F2A2A]'} ${scrolled ? 'text-gray-700' : 'text-white'} px-6 py-4 space-y-3`}>
+        <div className={`md:hidden ${scrolled ? 'bg-primary' : 'bg-secondary'} ${scrolled ? 'text-secondary' : 'text-primary'} px-6 py-4 space-y-3`}>
           <Link href="/">Home</Link>
           <Link href="/menu">Menu</Link>
           <div className="w-full">
             <button
               onClick={toggleAboutDropdown}
-              className={`block w-full text-left ${scrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`block w-full text-left ${scrolled ? 'text-secondary' : 'text-primary'}`}
             >
               About
             </button>
             {isAboutDropdownOpen && (
               <div className="pl-6 space-y-1">
-                <Link href="/chefs" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+                <Link href="/chefs" className={`block ${scrolled ? 'text-secondary' : 'text-primary'}`}>
                   Chefs
                 </Link>
-                <Link href="/cart" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+                <Link href="/cart" className={`block ${scrolled ? 'text-secondary' : 'text-primary'}`}>
                   Cart
                 </Link>
-                <Link href="/blog" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+                <Link href="/blog" className={`block ${scrolled ? 'text-secondary' : 'text-primary'}`}>
                   Blog
                 </Link>
-                <Link href="/faq" className={`block ${scrolled ? 'text-gray-700' : 'text-white'}`}>
+                <Link href="/faq" className={`block ${scrolled ? 'text-secondary' : 'text-primary'}`}>
                   FAQ
                 </Link>
               </div>
@@ -309,3 +309,174 @@ export default function CombinedHeader() {
     </>
   );
 }
+
+
+
+
+
+// 'use client';
+
+// import Link from "next/link";
+// import { useState, useEffect } from "react";
+// import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLocationArrow, FaUser } from "react-icons/fa";
+// import { useCart } from "../context/CartContext";
+
+// export default function CombinedHeader() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isPagesOpen, setIsPagesOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const { getTotalItems } = useCart();
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setScrolled(window.scrollY > 10);
+//     };
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   return (
+//     <>
+//       {/* 🔹 Static Header (Hide on Mobile) */}
+//       {!scrolled && (
+//         <div className="hidden md:block bg-primary text-secondary text-sm">
+//           <div className="container mx-auto px-4 h-10 flex items-center justify-between">
+
+//             <div className="flex items-center gap-6">
+//               <div className="flex gap-4">
+//                 <FaFacebookF />
+//                 <FaTwitter />
+//                 <FaInstagram />
+//                 <FaYoutube />
+//               </div>
+//               <span>USD ▾</span>
+//               <span>🇺🇸 English ▾</span>
+//             </div>
+
+//             <div className="flex items-center gap-6">
+//               <span className="flex items-center gap-2">
+//                 <FaLocationArrow className="text-sm" />
+//                 734 H, Bryan Burlington, NC
+//               </span>
+
+//               <Link href="/login" className="flex items-center gap-2">
+//                 <FaUser />
+//                 Login / Register
+//               </Link>
+//             </div>
+
+//           </div>
+//         </div>
+//       )}
+
+//       {/* 🔹 Main Header */}
+//       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-primary shadow-md' : 'bg-secondary'}`}>
+//         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+
+//           {/* Logo */}
+//           <Link
+//             href="/"
+//             className={`text-2xl font-bold ${scrolled ? 'text-secondary' : 'text-primary'}`}
+//           >
+//             Restfast
+//           </Link>
+
+//           {/* Desktop Menu */}
+//           <nav className="hidden lg:flex items-center gap-8 font-medium">
+//             <Link href="/" className={`${scrolled ? 'text-secondary' : 'text-primary'}`}>Home</Link>
+//             <Link href="/menu" className={`${scrolled ? 'text-secondary' : 'text-primary'}`}>Menu</Link>
+
+//             {/* Pages Dropdown */}
+//             <div className="relative group">
+//               <button className={`${scrolled ? 'text-secondary' : 'text-primary'}`}>
+//                 Pages ▾
+//               </button>
+//               <div className="absolute hidden group-hover:block bg-white text-black w-44 shadow-lg rounded-md mt-2">
+//                 <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">About</Link>
+//                 <Link href="/chefs" className="block px-4 py-2 hover:bg-gray-100">Chefs</Link>
+//                 <Link href="/blog" className="block px-4 py-2 hover:bg-gray-100">Blog</Link>
+//                 <Link href="/faq" className="block px-4 py-2 hover:bg-gray-100">FAQ</Link>
+//               </div>
+//             </div>
+
+//             <Link href="/shop" className={`${scrolled ? 'text-secondary' : 'text-primary'}`}>Shop</Link>
+//             <Link href="/contact" className={`${scrolled ? 'text-secondary' : 'text-primary'}`}>Contact</Link>
+//           </nav>
+
+//           {/* Right Side */}
+//           <div className="flex items-center gap-4">
+
+//             {/* Book Button */}
+//             <Link
+//               href="/booking"
+//               className="hidden md:inline-block bg-primary text-white px-5 py-2 rounded-md font-semibold hover:bg-primary/90 transition"
+//             >
+//               Book Now
+//             </Link>
+
+//             {/* Cart */}
+//             <Link href="/cart" className="relative">
+//               <svg className={`h-6 w-6 ${scrolled ? 'text-secondary' : 'text-primary'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17" />
+//               </svg>
+
+//               <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+//                 {getTotalItems()}
+//               </span>
+//             </Link>
+
+//             {/* Mobile Toggle */}
+//             <button
+//               onClick={() => setIsMenuOpen(!isMenuOpen)}
+//               className="lg:hidden text-2xl text-white"
+//             >
+//               ☰
+//             </button>
+
+//           </div>
+//         </div>
+
+//         {/* 🔹 Mobile Menu */}
+//         {isMenuOpen && (
+//           <div className="lg:hidden bg-secondary text-black px-6 py-4 shadow-md">
+            
+//             <nav className="flex flex-col space-y-4 text-lg font-medium">
+              
+//               <Link href="/" onClick={() => setIsMenuOpen(false)}>
+//                 Home
+//               </Link>
+
+//               <Link href="/menu" onClick={() => setIsMenuOpen(false)}>
+//                 Menu
+//               </Link>
+
+//               {/* Pages Section */}
+//               <button
+//                 onClick={() => setIsPagesOpen(!isPagesOpen)}
+//                 className="text-left"
+//               >
+//                 Pages ▾
+//               </button>
+
+//               {isPagesOpen && (
+//                 <div className="flex bg-primary flex-col pl-4 space-y-3 text-base font-normal">
+//                   <Link href="/about">About</Link>
+//                   <Link href="/chefs">Chefs</Link>
+//                   <Link href="/blog">Blog</Link>
+//                   <Link href="/faq">FAQ</Link>
+//                 </div>
+//               )}
+
+//               <Link href="/shop">Shop</Link>
+
+//               <Link href="/contact">Contact</Link>
+
+//             </nav>
+
+//           </div>
+//         )}
+
+//       </header>
+//     </>
+//   );
+// }
