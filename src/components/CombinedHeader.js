@@ -373,19 +373,21 @@ export default function CombinedHeader() {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${bgColor}`}>
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
 
-        <Link href="/" className="flex items-center gap-3">
+       <Link href="/" className="flex items-center gap-3">
   <Image
-    src="/logo1.png"
-    alt="Restfast Logo"
+    src={scrolled ? "/logo1.png" : "/mainlogo-removebg.png"} 
+    alt="FoodZentro Logo"
     width={60}
     height={60}
     priority
+    className="transition-all duration-300"
   />
 
   <span className={`text-xl sm:text-2xl font-bold ${textColor}`}>
     FoodZentro
   </span>
 </Link>
+
 
 
           {/* ================= DESKTOP MENU ================= */}

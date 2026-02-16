@@ -10,19 +10,35 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* Logo & Info */}
-          <div className="lg:col-span-1">
-            <h2 className="text-4xl font-extrabold text-secondary mb-6">FoodZentro</h2>
-            <p className="text-white leading-relaxed mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
-            </p>
-            <div className="flex gap-3">
-              {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube].map((Icon, index) => (
-                <div key={index} className="w-10 h-8 bg-white rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-secondary hover:text-white transition">
-                  <Icon size={18} />
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="lg:col-span-1">
+  <div className="flex items-center gap-3 mb-4">
+    <img
+      src="/footer.png"
+      alt="FoodZentro Logo"
+      className="w-12 h-12 object-contain"
+    />
+
+    <h2 className="text-3xl font-extrabold text-secondary ">
+      FoodZentro
+    </h2>
+  </div>
+
+  <p className="text-white leading-relaxed mb-6">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
+  </p>
+
+  <div className="flex gap-3">
+    {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube].map((Icon, index) => (
+      <div
+        key={index}
+        className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary cursor-pointer hover:bg-secondary hover:text-white transition"
+      >
+        <Icon size={16} />
+      </div>
+    ))}
+  </div>
+</div>
+
 
           {/* Our Menus */}
           <div>
