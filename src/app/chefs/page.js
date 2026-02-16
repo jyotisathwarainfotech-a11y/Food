@@ -79,8 +79,7 @@ export default function ChefsPage() {
           </h1>
 
           <p className="mt-6 text-gray-300 text-lg max-w-lg">
-            Discover unforgettable flavors crafted with passion, precision,
-            and premium ingredients. Every dish tells a story.
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -90,9 +89,11 @@ export default function ChefsPage() {
             >
               Explore Menu
             </Link>
+            <Link href={"/contact"}>
             <button className="px-8 py-3 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-black transition duration-300">
               Book a Table
             </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -184,132 +185,146 @@ export default function ChefsPage() {
       </section>
 
       {/* Image Slider */}
-      <section className="bg-primary overflow-hidden">
-        <div className="relative w-full">
+     <section className="bg-primary overflow-hidden py-12">
+  <div className="max-w-7xl mx-auto px-6">
 
-          <div className="flex w-max animate-scroll gap-2">
-            {[...images, ...images].map((img, index) => (
-              <div
-                key={index}
-                className="w-[300px] h-[200px] flex-shrink-0 rounded-xl overflow-hidden"
-              >
-                <Image
-                  src={img}
-                  alt="food"
-                  width={300}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            ))}
+    <div className="relative w-full overflow-hidden">
+      <div className="flex animate-scroll gap-4">
+
+        {[...images, ...images].map((img, index) => (
+          <div
+            key={index}
+            className="w-[280px] md:w-[320px] h-[180px] md:h-[220px] 
+            flex-shrink-0 rounded-xl overflow-hidden"
+          >
+            <Image
+              src={img}
+              alt="food"
+              width={320}
+              height={220}
+              className="object-cover w-full h-full"
+            />
           </div>
+        ))}
 
-        </div>
-      </section>
+      </div>
+    </div>
+
+  </div>
+
+  {/* Scroll Animation */}
+  <style jsx>{`
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  `}</style>
+    </section>
+
 
       {/* Call to Action */}
-      <section className="relative py-28 bg-primary overflow-hidden">
+  <section className="relative py-12 md:py-16 bg-primary overflow-hidden">
 
-      <div className="relative mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-10">
-          
-          {/* LEFT IMAGE - Walking Animation */}
-          <motion.div
-            initial={{ opacity: 0, x: -150 }}
-            whileInView={{ 
-              opacity: 1, 
-              x: [-150, 0], 
-            }}
-            animate={{
-              y: [0, -15, 0], 
-              rotate: [-2, 2, -2], 
-            }}
-            transition={{ 
-              x: { duration: 1, ease: "easeOut" },
-              y: { repeat: Infinity, duration: 0.6, ease: "easeInOut" },
-              rotate: { repeat: Infinity, duration: 0.6, ease: "easeInOut" }
-            }}
-            viewport={{ once: true }}
-            className="hidden lg:flex justify-center"
-          >
-            <div className="relative w-72 h-72">
-              <Image
-                src="/images/cartoon1.png"
-                alt="Walking Taco Character"
-                fill
-                className="object-contain" 
-                priority
-              />
-            </div>
-          </motion.div>
+  <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+    
+    <div className="grid grid-cols-1 xl:grid-cols-3 items-center gap-6">
 
-          {/* CENTER CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="w-[600px] bg-white/5 backdrop-blur-xl border border-white/10 rounded-[40px] p-8 md:p-12 text-center shadow-2xl z-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent leading-tight">
-              Experience Culinary Excellence
-            </h2>
-
-            <p className="text-gray-300 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-              Taste the artistry and passion of our chefs in every dish. 
-              A perfect blend of tradition, creativity, and flavor.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/menu"
-                className="px-10 py-4 rounded-full bg-secondary text-white font-bold text-lg hover:bg-secondary/80 hover:scale-105 transition-all shadow-[0_0_20px_rgba(249,115,22,0.4)]"
-              >
-                View Our Menu
-              </Link>
-
-              <Link
-                href="/reservation"
-                className="px-10 py-4 rounded-full border-2 border-white/30 text-white font-bold text-lg hover:bg-secondary hover:text-primary hover:scale-105 transition-all"
-              >
-                Make Reservation
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* RIGHT IMAGE - Walking Animation */}
-          <motion.div
-            initial={{ opacity: 0, x: 150 }}
-            whileInView={{ 
-              opacity: 1, 
-              x: [150, 0], 
-            }}
-            animate={{
-              y: [0, -15, 0],
-              rotate: [2, -2, 2],
-            }}
-            transition={{ 
-              x: { duration: 1, ease: "easeOut" },
-              y: { repeat: Infinity, duration: 0.5, ease: "easeInOut", delay: 0.1 }, // Offset delay for natural feel
-              rotate: { repeat: Infinity, duration: 0.5, ease: "easeInOut", delay: 0.1 }
-            }}
-            viewport={{ once: true }}
-            className="hidden lg:flex justify-center"
-          >
-            <div className="relative w-72 h-72">
-              <Image
-                src="/images/cartoon6.png"
-                alt="Walking Fries Character"
-                fill
-                className="object-contain" // Prevents cutting
-                priority
-              />
-            </div>
-          </motion.div>
-
+      {/* LEFT IMAGE */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ y: { repeat: Infinity, duration: 1.5 } }}
+        viewport={{ once: true }}
+        className="hidden xl:flex justify-center"
+      >
+        <div className="relative w-48 h-48">
+          <Image
+            src="/images/cartoon1.png"
+            alt="Taco"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
-      </div>
-    </section>
+      </motion.div>
+
+      {/* CENTER CARD */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="w-full max-w-2xl mx-auto 
+                   bg-white/5 backdrop-blur-lg 
+                   border border-white/10 
+                   rounded-3xl 
+                   p-6 md:p-8 
+                   text-center shadow-xl"
+      >
+        <h2 className="text-3xl md:text-4xl xl:text-5xl font-extrabold mb-4 
+                       bg-gradient-to-r from-orange-400 to-yellow-400 
+                       bg-clip-text text-transparent leading-tight">
+          Experience Culinary Excellence
+        </h2>
+
+        <p className="text-gray-300 text-base md:text-lg mb-6 max-w-lg mx-auto">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/menu"
+            className="px-6 py-3 rounded-full bg-secondary text-white font-semibold 
+                       hover:scale-105 transition"
+          >
+            View Menu
+          </Link>
+
+          <Link
+            href="/contact"
+            className="px-6 py-3 rounded-full border border-white/30 text-white 
+                       hover:bg-secondary hover:text-primary transition"
+          >
+            Reservation
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* RIGHT IMAGE */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ y: { repeat: Infinity, duration: 1.5, delay: 0.2 } }}
+        viewport={{ once: true }}
+        className="hidden xl:flex justify-center"
+      >
+        <div className="relative w-48 h-48">
+          <Image
+            src="/images/cartoon6.png"
+            alt="Fries"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+
+
     </div>
   );
 }

@@ -5,33 +5,37 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BadgeDollarSign, StarIcon, Truck, UtensilsCrossed } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-
+import { useState } from 'react';
+import BookingModal from "../../components/BookingModal";
 const teamMembers = [
   {
     id: 1,
     name: "Chef Maria Rodriguez",
     role: "Founder & Head Chef",
     img: "/images/chef5.jpg",
-    desc: "With over 20 years of experience, Maria brings her family's culinary traditions to every dish."
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 2,
     name: "Chef James Wilson",
     role: "Sous Chef",
     img: "/images/chef6.jpg",
-    desc: "James specializes in modern fusion cuisine and manages our innovative seasonal menu."
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 3,
     name: "Sarah Johnson",
     role: "Restaurant Manager",
     img: "/images/chef7.jpg",
-    desc: "Sarah ensures every guest has an exceptional experience from reservation to farewell."
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   }
 ];
 
 export default function AboutPage() {
+  const [openBooking, setOpenBooking] = useState(false);
+
   return (
+    <>
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -87,18 +91,20 @@ export default function AboutPage() {
         </h1>
 
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-200 mb-8">
-          Discover the passion, tradition, and dedication behind our delicious journey. 
-          We bring authentic taste crafted with love and fresh ingredients.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
         </p>
 
           <div className="flex justify-start gap-4 flex-wrap">
+            <Link href={"/menu"}>
           <button className="px-6 py-3 bg-secondary hover:bg-secondary/90 rounded-full font-semibold transition duration-300 shadow-lg">
             Explore Menu
           </button>
-
+          </Link>
+          <Link href={"/contact"}>
           <button className="px-6 py-3 border border-white hover:bg-primary hover:text-white rounded-full font-semibold transition duration-300">
             Contact Us
           </button>
+          </Link>
         </div>
         </motion.div>
 
@@ -106,205 +112,209 @@ export default function AboutPage() {
     </section>
 
       {/* About Content */}
-      <section className="relative bg-gradient-to-r from-primary to-secondary py-24 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-secondary font-semibold tracking-widest uppercase mb-4">
-              Our Story
-            </p>
+    <section className="relative bg-gradient-to-r from-primary to-secondary py-16 md:py-24 overflow-hidden">
+  <div className="container mx-auto px-4 sm:px-6">
 
-            <h2 className="text-5xl font-extrabold text-white leading-tight mb-6">
-              We Provide Best Quality <br />
-              Food For Your Health
-            </h2>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
 
-            <p className="text-secondary leading-relaxed mb-8">
-              Welcome to our restaurant, where culinary excellence meets warm
-              hospitality in every dish we serve. Our passion for food and
-              dedication to quality ingredients ensures every bite is
-              unforgettable.
-            </p>
+      {/* LEFT CONTENT */}
+      <motion.div
+        initial={{ x: -80, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-secondary font-semibold tracking-widest uppercase mb-3 text-sm sm:text-base">
+          Our Story
+        </p>
 
-            <button className="bg-secondary hover:bg-secondary/90 rounded-md text-white px-8 py-3 font-semibold transition-all duration-300">
-              Learn More Us →
-            </button>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+          We Provide Best Quality <br className="hidden sm:block" />
+          Food For Your Health
+        </h2>
 
-            {/* STATS */}
-            <div className="flex gap-16 mt-14">
-              <div>
-                <h3 className="text-4xl font-bold text-secondary">34K+</h3>
-                <p className="text-white mt-2">Organic Planting</p>
-              </div>
+        <p className="text-secondary leading-relaxed mb-8 text-sm sm:text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
+        </p>
 
-              <div>
-                <h3 className="text-4xl font-bold text-secondary">356+</h3>
-                <p className="text-white mt-2">Passionate Chef’s</p>
-              </div>
+      
 
-              <div>
-                <h3 className="text-4xl font-bold text-secondary">8534+</h3>
-                <p className="text-white mt-2">Favourite Dishes</p>
-              </div>
-            </div>
-          </motion.div>
+        {/* STATS */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-12 sm:mt-14">
+          <div>
+            <h3 className="text-3xl sm:text-4xl font-bold text-secondary">34K+</h3>
+            <p className="text-white mt-2 text-sm sm:text-base">Organic Planting</p>
+          </div>
 
-          {/* RIGHT IMAGE DESIGN */}
-          <motion.div
-            initial={{ x: 80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative flex justify-center items-center"
-          >
-            {/* Background Glow */}
-            <div className="absolute w-[500px] h-[500px] bg-orange-200 rounded-full blur-3xl opacity-30"></div>
+          <div>
+            <h3 className="text-3xl sm:text-4xl font-bold text-secondary">356+</h3>
+            <p className="text-white mt-2 text-sm sm:text-base">Passionate Chef’s</p>
+          </div>
 
-            {/* Main Layout Wrapper */}
-            <div className="relative w-[520px] h-[520px]">
-
-              {/* LEFT LARGE IMAGE */}
-              <div className="absolute left-0 top-10 w-[220px] h-[320px] rounded-3xl overflow-hidden shadow-2xl z-10">
-                <Image
-                  src="/images/img3.jpg"
-                  alt="Chef"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* TOP RIGHT SMALL IMAGE */}
-              <div className="absolute right-0 top-0 w-[220px] h-[260px] rounded-3xl overflow-hidden shadow-xl z-20 border-4 border-white">
-                <Image
-                  src="/images/img2.jpg"
-                  alt="Chef"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* BOTTOM RIGHT SMALL IMAGE (3rd Image) */}
-              <div className="absolute right-0 bottom-0 w-[240px] h-[260px] rounded-3xl overflow-hidden shadow-xl z-20 border-4 border-white">
-                <Image
-                  src="/images/img1.jpg"
-                  alt="Restaurant"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Floating Badge */}
-              <div className="absolute bottom-6 left-40 bg-yellow-500 w-32 h-32 rounded-full 
-                              flex items-center justify-center shadow-2xl border-8 border-white z-30">
-                <div className="text-center">
-                  <p className="text-black font-bold text-sm">Quality Food</p>
-                  <p className="text-black text-xs">Since 2010</p>
-                </div>
-              </div>
-
-            </div>
-          </motion.div>
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-3xl sm:text-4xl font-bold text-secondary">8534+</h3>
+            <p className="text-white mt-2 text-sm sm:text-base">Favourite Dishes</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
 
-      {/* Values Section */}
-     <section
-      className="relative py-28 bg-fixed bg-center bg-cover overflow-hidden"
-      style={{ backgroundImage: "url('/images/sell1.png')" }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-secondary/10 z-0"></div>
+      {/* RIGHT IMAGE DESIGN */}
+      <motion.div
+        initial={{ x: 80, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative flex justify-center items-center mt-10 lg:mt-0"
+      >
+        {/* Background Glow */}
+        <div className="absolute w-[280px] sm:w-[400px] md:w-[500px] h-[280px] sm:h-[400px] md:h-[500px] bg-orange-200 rounded-full blur-3xl opacity-30"></div>
 
-      <div className="relative container mx-auto px-6 z-20">
-        {/* Top Small Heading */}
-        <div className="text-center mb-6">
-          <p className="text-primary font-semibold tracking-widest uppercase">
-            Popular Food Category
-          </p>
-        </div>
+        {/* Wrapper */}
+        <div className="relative w-full max-w-[380px] sm:max-w-[450px] md:max-w-[520px] aspect-square">
 
-        {/* Main Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-            WE PROVIDE AMAZING & QUALITY <br />
-            FOOD FOR YOUR GOOD HEALTH
-          </h2>
-        </div>
+          {/* LEFT IMAGE */}
+          <div className="absolute left-0 top-6 sm:top-10 w-[45%] h-[60%] rounded-3xl overflow-hidden shadow-2xl z-10">
+            <Image
+              src="/images/img3.jpg"
+              alt="Chef"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Best Quality Food",
-              desc: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
-              icon: <UtensilsCrossed size={40} />,
-            },
-            {
-              title: "Fast Food Delivery",
-              desc: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
-              icon: <Truck size={40} />,
-            },
-            {
-              title: "Money Back Guarantee",
-              desc: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
-              icon: <BadgeDollarSign size={40} />,
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="relative bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 text-center group"
-            >
+          {/* TOP RIGHT */}
+          <div className="absolute right-0 top-0 w-[45%] h-[50%] rounded-3xl overflow-hidden shadow-xl z-20 border-4 border-white">
+            <Image
+              src="/images/img2.jpg"
+              alt="Chef"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-              {/* 🔥 Hotdog Image Only On Last Card */}
-              {i === 2 && (
-                <motion.div
-                  initial={{ rotate: 25 }}
-                  whileHover={{ rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className="absolute -top-24 -right-24 z-40 scale-110"
-                >
-                  <Image
-                    src="/images/cartoon5.png"
-                    alt="Cartoon"
-                    width={220}
-                    height={220}
-                    className="drop-shadow-2xl pointer-events-none"
-                  />
-                </motion.div>
-              )}
+          {/* BOTTOM RIGHT */}
+          <div className="absolute right-0 bottom-0 w-[50%] h-[50%] rounded-3xl overflow-hidden shadow-xl z-20 border-4 border-white">
+            <Image
+              src="/images/img1.jpg"
+              alt="Restaurant"
+              fill
+              className="object-cover"
+            />
+          </div>
 
+          {/* Floating Badge */}
+          <div className="absolute bottom-4 sm:bottom-6 left-[35%] sm:left-40 
+                          bg-yellow-500 w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 
+                          rounded-full flex items-center justify-center 
+                          shadow-2xl border-4 sm:border-8 border-white z-30">
 
-              {/* Icon */}
-              <div className="flex justify-center mb-4 text-primary group-hover:scale-110 transition duration-300">
-                {item.icon}
-              </div>
-
-              {/* Title */}
-              <h3 className="font-bold text-xl mb-2">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-primary">
-                {item.desc}
+            <div className="text-center">
+              <p className="text-black font-bold text-xs sm:text-sm">
+                Quality Food
+              </p>
+              <p className="text-black text-[10px] sm:text-xs">
+                Since 2010
               </p>
             </div>
-          ))}
+          </div>
+
         </div>
-      </div>
+      </motion.div>
+
+    </div>
+  </div>
     </section>
+
+
+      {/* Values Section */}
+      <section
+        className="relative py-28 bg-fixed bg-center bg-cover overflow-hidden"
+        style={{ backgroundImage: "url('/images/sell1.png')" }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-secondary/10 z-0"></div>
+
+        <div className="relative container mx-auto px-6 z-20">
+          {/* Top Small Heading */}
+          <div className="text-center mb-6">
+            <p className="text-primary font-semibold tracking-widest uppercase">
+              Popular Food Category
+            </p>
+          </div>
+
+          {/* Main Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+              WE PROVIDE AMAZING & QUALITY <br />
+              FOOD FOR YOUR GOOD HEALTH
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Best Quality Food",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. ",
+                icon: <UtensilsCrossed size={40} />,
+              },
+              {
+                title: "Fast Food Delivery",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. ",
+                icon: <Truck size={40} />,
+              },
+              {
+                title: "Money Back Guarantee",
+                desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. ",
+                icon: <BadgeDollarSign size={40} />,
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="relative bg-white/60 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 text-center group"
+              >
+
+                {i === 2 && (
+                  <motion.div
+                    initial={{ rotate: 25 }}
+                    whileHover={{ rotate: 0 }}
+                    transition={{ type: "spring", stiffness: 200 }}
+                    className="absolute -top-24 -right-24 z-40 scale-110"
+                  >
+                    {/* <Image
+                      src="/images/cartoon5.png"
+                      alt="Cartoon"
+                      width={220}
+                      height={220}
+                      className="drop-shadow-2xl pointer-events-none"
+                    /> */}
+                  </motion.div>
+                )}
+
+
+                {/* Icon */}
+                <div className="flex justify-center mb-4 text-primary group-hover:scale-110 transition duration-300">
+                  {item.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="font-bold text-xl mb-2">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-primary">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Team Section */}
        <section className="py-20 bg-gradient-to-r from-primary to-secondary ">
-      <div className=" mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
         <motion.div
@@ -318,7 +328,7 @@ export default function AboutPage() {
             Meet Our <span className="text-primary italic">Team</span>
           </h2>
           <p className="text-secondary mt-4 max-w-2xl mx-auto">
-            Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
           </p>
         </motion.div>
 
@@ -403,17 +413,16 @@ export default function AboutPage() {
         </h2>
 
         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-          Join us for dinner and taste the passion that has been our foundation
-          for over a decade.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/reservation"
+          <button
+           onClick={() => setOpenBooking(true)}
             className="bg-secondary hover:bg-secondary/80 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300"
           >
             Make Reservation
-          </Link>
+          </button>
 
           <Link
             href="/menu"
@@ -425,5 +434,13 @@ export default function AboutPage() {
       </motion.div>
     </section>
     </div>
+
+    <BookingModal
+  isOpen={openBooking}
+  onClose={() => setOpenBooking(false)}
+/>
+
+
+    </>
   );
 }

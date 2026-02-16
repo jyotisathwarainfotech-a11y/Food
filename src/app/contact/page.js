@@ -41,20 +41,20 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+    
       <section className="relative overflow-hidden py-32 md:py-44 text-white">
-        {/* 1. Background Image with Overlay */}
+      
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/home2.jpg" // Add your image path here
+            src="/images/home2.jpg" 
             alt="Contact Background"
             className="w-full h-full object-cover"
           />
-          {/* Gradient Overlay for Readability */}
+        
           <div className="absolute inset-0 bg-primary/30 via-primary/80 to-transparent"></div>
         </div>
 
-        {/* 2. Animated Background Blobs */}
+      
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity }}
@@ -62,7 +62,7 @@ export default function ContactPage() {
         />
 
         <div className="relative container mx-auto px-4 text-center z-20">
-          {/* Heading */}
+         
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,18 +72,17 @@ export default function ContactPage() {
             Let's <span className="text-secondary">Connect</span> With Us
           </motion.h1>
 
-          {/* Subtext */}
+         
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg md:text-2xl max-w-2xl mx-auto text-orange-50 font-medium"
           >
-            We’d love to hear from you! Whether it's reservations, feedback, or
-            special requests — our team is here to help.
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
           </motion.p>
 
-          {/* Buttons */}
+         
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -100,7 +99,7 @@ export default function ContactPage() {
           </motion.div>
         </div>
 
-        {/* 3. FIXED BOTTOM WAVE DESIGN */}
+      
         <div className="absolute bottom-0 left-0 w-full leading-none z-30">
           <svg 
             viewBox="0 0 1200 120" 
@@ -108,7 +107,7 @@ export default function ContactPage() {
             className="relative block w-full h-[80px] md:h-[120px]"
           >
             <defs>
-              {/* Gradient for the Wave Fill */}
+              
               <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" className="stop-primary" style={{ stopColor: 'var(--color-primary, #1d2527)' }} />
                 <stop offset="100%" className="stop-secondary" style={{ stopColor: 'var(--color-secondary, #d4a155)' }} />
@@ -133,6 +132,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{once: true}}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-5xl md:text-6xl font-black mb-8 leading-tight">
@@ -142,7 +142,7 @@ export default function ContactPage() {
                 </span>
               </h2>
               <p className="text-white-100 text-lg mb-12 max-w-md">
-                Whether you have a question about our menu, catering, or just want to say hi, our team is ready to help.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
               </p>
             </motion.div>
 
@@ -153,6 +153,7 @@ export default function ContactPage() {
                   key={i}
                   whileHover={{ scale: 1.05, y: -5 }}
                   initial={{ opacity: 0, y: 20 }}
+                   viewport={{once: true}}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[32px] flex items-center gap-4 group"
@@ -173,6 +174,7 @@ export default function ContactPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{once: true}}
             className="lg:w-1/2 w-full"
           >
             <div className="relative p-8 md:p-12 rounded-[40px] shadow-2xl overflow-hidden border border-white/20">

@@ -127,3 +127,9 @@ body {
   animation: scrollText 20s linear infinite;
 }
 
+
+
+@keyframes shine {
+  from { transform: translateX(-200px) rotate(12deg); }
+  to { transform: translateX(800px) rotate(12deg); }
+}

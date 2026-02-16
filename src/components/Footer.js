@@ -1,18 +1,19 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGooglePlay, FaAppStore } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-primary to-secondary pt-12 relative">
+    <footer className="bg-primary  pt-12 relative">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 pb-12 mt-40">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* Logo & Info */}
           <div className="lg:col-span-1">
-            <h2 className="text-4xl font-extrabold text-secondary mb-6">food Zone</h2>
+            <h2 className="text-4xl font-extrabold text-secondary mb-6">FoodZentro</h2>
             <p className="text-white leading-relaxed mb-6">
-              Duis aute irure dolor in reprehenderit involk up tate velit esse cillum dolore euint fugiat null pariatusrint occaecat sunt.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
             </p>
             <div className="flex gap-3">
               {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube].map((Icon, index) => (
@@ -29,25 +30,41 @@ export default function Footer() {
             <div className="w-12 h-1 bg-white mb-6 opacity-30"></div>
             <ul className="space-y-3 text-white">
               {['Chicken Burger', 'Brief Pizza', 'Fresh Vegetable', 'Sea Foods', 'Desserts', 'Cold Drinks', 'Discount'].map((item) => (
-                <li key={item} className="hover:text-primary cursor-pointer flex items-center gap-2 group">
-                  <span className="text-primary opacity-0 group-hover:opacity-100">→</span> {item}
+                <li key={item} className="hover:text-secondary cursor-pointer flex items-center gap-2 group">
+                  <span className="text-secondary opacity-0 group-hover:opacity-100">→</span> {item}
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Useful Links */}
-          <div>
-            <h4 className="text-xl font-bold text-secondary mb-2">Useful Links</h4>
-            <div className="w-12 h-1 bg-white mb-6 opacity-30"></div>
-            <ul className="space-y-3 text-white">
-              {['About Us', 'Restaurant', 'Our Chefs', 'Testimonials', 'Blogs', "FAQ's", 'Privacy Policy'].map((item) => (
-                <li key={item} className="hover:text-primary cursor-pointer flex items-center gap-2 group">
-                  <span className="text-primary opacity-0 group-hover:opacity-100">→</span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+    <div>
+  <h4 className="text-xl font-bold text-secondary mb-2">Useful Links</h4>
+  <div className="w-12 h-1 bg-white mb-6 opacity-30"></div>
+
+  <ul className="space-y-3 text-white">
+    {[
+      { name: "About Us", path: "/about" },
+      { name: "Our Chefs", path: "/chefs" },
+      { name: "Blogs", path: "/blog" },
+      { name: "Contact", path: "/contact" },
+      { name: "menu", path: "/menu" },
+      { name: "FAQ's", path: "/faq" },
+    ].map((item) => (
+      <li key={item.name}>
+        <Link
+          href={item.path}
+          className="hover:text-secondary cursor-pointer flex items-center gap-2 group transition"
+        >
+          <span className="text-secondary opacity-0 group-hover:opacity-100 transition">
+            →
+          </span>
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* Contact Us */}
           <div>
@@ -60,7 +77,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <div className="p-2 bg-secondary rounded-full text-white"><FaEnvelope size={14}/></div>
-                <div>www.yourdomain.com <br/> info@yourdomain.com</div>
+                <div>www.xyz.com <br/> info@xyz.com</div>
               </li>
               <li className="flex items-start gap-3">
                 <div className="p-2 bg-secondary rounded-full text-white mt-1"><FaMapMarkerAlt size={14}/></div>
@@ -109,7 +126,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-primary py-6 mt-4">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-white gap-4">
-          <p>©2023. All rights reserved by <span className="text-secondary font-bold">food Zone</span></p>
+          <p>©2026. All rights reserved by <span className="text-secondary font-bold">foodzentro</span></p>
         </div>
       </div>
     </footer>

@@ -22,8 +22,13 @@ const sansita = Sansita({
 });
 
 export const metadata = {
-  title: "FoodDelight - Delicious Food Restaurant",
+  title: "FoodZentro - Delicious Food Restaurant",
   description: "Experience the finest cuisine at FoodDelight restaurant. Fresh ingredients, expert chefs, and unforgettable dining.",
+    icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -32,7 +37,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sansita.variable} antialiased`}
       >
-        <CartProvider>
+         <CartProvider>
           <CombinedHeader />
           <main>{children}</main>
           <Footer />

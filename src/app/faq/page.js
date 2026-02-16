@@ -4,36 +4,37 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle, MessageSquare, Phone, Mail } from 'lucide-react';
 
+
 const faqData = [
   {
     id: 1,
     question: "What are your operating hours?",
-    answer: "We are open Monday through Sunday from 10:00 AM to 10:00 PM. Kitchen service is available until 9:30 PM."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 2,
     question: "Do you offer vegetarian and vegan options?",
-    answer: "Yes, we have an extensive vegetarian menu and several vegan options. Our chefs are happy to accommodate dietary restrictions and preferences."
+     answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 3,
     question: "Can I make a reservation online?",
-    answer: "Absolutely! You can make reservations through our website or by calling us directly at (123) 456-7890. We recommend booking in advance, especially for weekends and holidays."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 4,
     question: "Do you offer delivery services?",
-    answer: "Yes, we partner with major delivery platforms and also offer our own delivery service within a 5-mile radius. Delivery is available from 11:00 AM to 9:00 PM."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 5,
     question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards (Visa, MasterCard, American Express), debit cards, cash, and mobile payments (Apple Pay, Google Pay)."
+     answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 6,
     question: "Do you have private dining options?",
-    answer: "Yes, we have two private dining rooms that can accommodate groups of 12-30 people. Perfect for corporate events, birthdays, and special celebrations."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   }
 ];
 
@@ -56,37 +57,28 @@ export default function FAQPage() {
   return (
     <>
     {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-[var(--primary)]">
 
-      {/* Animated Gradient Glow Background */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        className="absolute inset-0"
-      >
-        <div className="absolute top-[-150px] left-[-150px] w-[400px] h-[400px] bg-orange-500/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-[-150px] right-[-150px] w-[400px] h-[400px] bg-yellow-500/20 rounded-full blur-[120px] animate-pulse"></div>
-      </motion.div>
+      
 
-      {/* Floating Icon Animation */}
+      {/* Floating Icon */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
-        animate={{ y: [0, -15, 0], opacity: 1 }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute top-20 left-20 hidden md:block text-orange-400"
+        animate={{ y: [0, -20, 0], opacity: 1 }}
+        transition={{ duration: 5, repeat: Infinity }}
+        className="absolute top-20 left-20 hidden md:block text-[var(--secondary)]"
       >
-        <HelpCircle size={60} />
+        <HelpCircle size={70} />
       </motion.div>
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-6 relative z-10 text-center">
 
         {/* Badge */}
         <motion.span
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-block px-6 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold tracking-widest uppercase backdrop-blur-md"
+          transition={{ delay: 0.2 }}
+          className="inline-block px-6 py-2 rounded-full bg-[var(--secondary)]/10 border border-[var(--secondary)]/40 text-[var(--secondary)] text-sm font-semibold tracking-widest uppercase backdrop-blur-md"
         >
           FAQ • Support Center
         </motion.span>
@@ -95,11 +87,11 @@ export default function FAQPage() {
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-6 text-5xl md:text-7xl font-black tracking-tight leading-tight"
+          transition={{ delay: 0.4 }}
+          className="mt-6 text-4xl sm:text-5xl md:text-7xl text-white leading-tight"
         >
           Got Questions? <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500">
+          <span className="text-transparent bg-clip-text bg-[var(--secondary)]">
             We’ve Got Answers.
           </span>
         </motion.h1>
@@ -108,30 +100,19 @@ export default function FAQPage() {
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-6 text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          transition={{ delay: 0.6 }}
+          className="mt-6 text-gray-300 text-base md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
-          Explore everything you need to know about reservations, menu details,
-          private dining, and our culinary experience — all in one place.
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
         </motion.p>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-10"
-        >
-          <button className="px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300">
-            Browse FAQs
-          </button>
-        </motion.div>
+    
 
       </div>
-    </section>
+      </section>
 
       {/* --- FAQ QUESTIONS --- */}
-      <section className="py-20 relative bg-primary">
+      <section className="py-12 relative bg-primary">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="space-y-4">
             {faqData.map((faq, index) => (
@@ -143,7 +124,7 @@ export default function FAQPage() {
                 viewport={{ once: true }}
                 className={`group border rounded-3xl transition-all duration-300 ${
                   openId === faq.id 
-                  ? 'bg-white/10 border-orange-500/50 shadow-[0_0_30px_rgba(249,115,22,0.1)]' 
+                  ? 'bg-white/10 border-secondary shadow-[0_0_30px_rgba(249,115,22,0.1)]' 
                   : 'bg-white/5 border-white/10 hover:border-white/20'
                 }`}
               >
@@ -186,28 +167,51 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="bg-primary overflow-hidden">
-            <div className="relative w-full">
-      
-              <div className="flex w-max animate-scroll gap-2">
-                {[...images, ...images].map((img, index) => (
-                  <div
-                    key={index}
-                    className="w-[300px] h-[200px] flex-shrink-0 rounded-xl overflow-hidden"
-                  >
-                    <Image
-                      src={img}
-                      alt="food"
-                      width={300}
-                      height={200}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                ))}
-              </div>
-      
-            </div>
-          </section>
+    <section className="bg-primary overflow-hidden py-12">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="relative w-full overflow-hidden">
+      <div className="flex animate-scroll gap-4">
+
+        {[...images, ...images].map((img, index) => (
+          <div
+            key={index}
+            className="w-[280px] md:w-[320px] 
+            h-[180px] md:h-[220px] 
+            flex-shrink-0 rounded-xl overflow-hidden"
+          >
+            <Image
+              src={img}
+              alt="food"
+              width={320}
+              height={220}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        ))}
+
+      </div>
+    </div>
+
+  </div>
+
+  {/* Scroll Animation */}
+  <style jsx>{`
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  `}</style>
+    </section>
+
       </>
   );
 }

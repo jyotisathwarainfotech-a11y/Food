@@ -1,64 +1,71 @@
+
+"use client";
+
+import { motion } from "framer-motion";
 import Link from 'next/link';
+import { ChefHat, UtensilsCrossed } from "lucide-react";
+import { useState } from "react";
+import { Mail, Send } from "lucide-react";
 
 const blogPosts = [
   {
     id: 1,
     title: 'The Art of Perfect Grilling: Tips from Our Master Chef',
-    excerpt: 'Discover the secrets behind our perfectly grilled dishes and learn techniques that will elevate your home cooking.',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.',
     date: '2024-01-15',
     author: 'Chef Marcus Johnson',
     category: 'Cooking Tips',
-    image: '/placeholder.jpg',
+    image: '/images/blog1.jpg',
     readTime: '5 min read'
   },
   {
     id: 2,
     title: 'Seasonal Ingredients: Why They Matter for Your Health',
-    excerpt: 'Explore how using seasonal, locally-sourced ingredients benefits both your health and the environment.',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.',
     date: '2024-01-12',
     author: 'Chef Maria Rodriguez',
     category: 'Health & Nutrition',
-    image: '/placeholder.jpg',
+    image: '/images/blog2.webp',
     readTime: '7 min read'
   },
   {
     id: 3,
     title: 'Behind the Scenes: A Day in Our Kitchen',
-    excerpt: 'Take a peek into the daily operations of our kitchen and meet the team that makes it all happen.',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.',
     date: '2024-01-10',
     author: 'Sarah Johnson',
     category: 'Behind the Scenes',
-    image: '/placeholder.jpg',
+    image: '/images/blog3.jpg',
     readTime: '4 min read'
   },
   {
     id: 4,
     title: 'Wine Pairing Guide: Matching the Perfect Wine with Your Meal',
-    excerpt: 'Learn the art of wine pairing and discover which wines complement our signature dishes perfectly.',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.',
     date: '2024-01-08',
     author: 'Chef James Wilson',
     category: 'Food & Wine',
-    image: '/placeholder.jpg',
+    image: '/images/blog4.webp',
     readTime: '6 min read'
   },
   {
     id: 5,
     title: 'Holiday Menu Planning: Creating Memorable Family Dinners',
-    excerpt: 'Tips and tricks for planning stress-free holiday meals that will impress your family and friends.',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.',
     date: '2024-01-05',
     author: 'Chef Sophia Chen',
     category: 'Holiday Specials',
-    image: '/placeholder.jpg',
+    image: '/images/blog1.jpg',
     readTime: '8 min read'
   },
   {
     id: 6,
     title: 'Sustainable Dining: Our Commitment to Environmental Responsibility',
-    excerpt: 'Learn about our sustainability initiatives and how we\'re working to reduce our environmental impact.',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.',
     date: '2024-01-03',
     author: 'FoodDelight Team',
     category: 'Sustainability',
-    image: '/placeholder.jpg',
+    image: '/images/blog3.jpg',
     readTime: '5 min read'
   }
 ];
@@ -74,115 +81,262 @@ const categories = [
 ];
 
 export default function BlogPage() {
+  const [active, setActive] = useState(categories[0]);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-500 to-orange-600 py-20">
-        <div className="container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">FoodDelight Blog</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Culinary insights, cooking tips, and stories from our kitchen
-          </p>
-        </div>
-      </section>
+     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-primary">
+
+      {/* Soft Glow Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-[600px] h-[600px] bg-secondary/20 blur-[160px] rounded-full top-[-150px] left-[-150px] animate-pulse" />
+        <div className="absolute w-[500px] h-[500px] bg-secondary/10 blur-[140px] rounded-full bottom-[-150px] right-[-150px] animate-pulse" />
+      </div>
+
+      {/* Floating Icons */}
+      <motion.div
+        animate={{ y: [0, -40, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 7, repeat: Infinity }}
+        className="absolute top-24 left-16 text-secondary opacity-20"
+      >
+        <ChefHat size={90} />
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, 40, 0], rotate: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute bottom-24 right-16 text-secondary opacity-20"
+      >
+        <UtensilsCrossed size={90} />
+      </motion.div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center max-w-4xl px-6">
+
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="inline-block px-6 py-2 rounded-full font-semibold mb-6 border border-secondary text-secondary bg-secondary/10 backdrop-blur-lg"
+        >
+          FOOD BLOG
+        </motion.div>
+
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-5xl md:text-7xl font-extrabold leading-tight text-white"
+        >
+          Discover The
+          <span className="block text-secondary">
+            Taste Stories
+          </span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto"
+        >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
+        </motion.p>
+
+      
+
+      </div>
+
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-primary to-transparent" />
+
+    </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white sticky top-16 z-40 shadow-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map(category => (
-              <button
-                key={category}
-                className="px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-orange-100 transition-all duration-300"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+    {/* <section className="py-8 bg-primary sticky top-16 z-40 border-b border-secondary/20 backdrop-blur-lg">
+
+    
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-secondary/60" />
+
+      <div className="container mx-auto px-4">
+
+        <div className="flex flex-wrap justify-center gap-4">
+
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActive(category)}
+              className={`
+                relative px-7 py-3 rounded-full font-semibold
+                transition-all duration-300
+                border backdrop-blur-md
+
+                ${
+                  active === category
+                    ? "bg-secondary text-primary border-secondary shadow-[0_0_20px_rgba(212,161,85,0.4)] scale-105"
+                    : "bg-white/5 text-gray-300 border-white/10 hover:border-secondary hover:text-secondary hover:bg-white/10 hover:scale-105"
+                }
+              `}
+            >
+              {category}
+
+            
+              {active === category && (
+                <span className="absolute inset-0 rounded-full border border-secondary animate-pulse opacity-60" />
+              )}
+            </button>
+          ))}
+
         </div>
-      </section>
+      </div>
+    </section> */}
 
       {/* Blog Posts Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map(post => (
-              <article key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden blog-card">
-                <div className="h-48 bg-gray-300 relative">
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {post.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white bg-opacity-90 backdrop-blur-sm px-3 py-1 rounded-full text-sm">
-                    {post.readTime}
-                  </div>
+   <section className="py-12 bg-[var(--primary)]">
+      <div className="container mx-auto px-6">
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          {blogPosts.map((post, index) => (
+            <motion.article
+              key={post.id}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className="group relative rounded-3xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
+            >
+
+              {/* IMAGE */}
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+                {/* Category Badge */}
+                <span className="absolute top-4 left-4 px-4 py-1 text-xs rounded-full bg-[var(--secondary)] text-white font-semibold shadow-lg">
+                  {post.category}
+                </span>
+
+                {/* Read Time */}
+                <span className="absolute top-4 right-4 text-xs bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[var(--primary)] font-medium">
+                  {post.readTime}
+                </span>
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-7">
+
+                {/* Date + Author */}
+                <div className="text-sm text-gray-500 mb-3 flex items-center gap-2">
+                  <span>
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  •
+                  <span className="font-medium text-[var(--secondary)]">
+                    {post.author}
+                  </span>
                 </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
-                    <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}</span>
-                    <span className="mx-2">•</span>
-                    <span>By {post.author}</span>
-                  </div>
-                  
-                  <h2 className="text-xl font-bold text-gray-800 mb-3 hover:text-orange-600 transition-colors">
-                    <Link href={`/blog/${post.id}`}>
-                      {post.title}
-                    </Link>
-                  </h2>
-                  
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  
-                  <Link 
-                    href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-orange-600 font-medium hover:text-orange-700 transition-colors"
-                  >
-                    Read More
-                    <svg className="h-4 w-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+
+                {/* TITLE */}
+                <h2 className="text-xl font-bold text-[var(--primary)] mb-3 group-hover:text-[var(--secondary)] transition">
+                  <Link href={`/blog/${post.id}`}>
+                    {post.title}
                   </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                </h2>
 
-          {/* Load More Button */}
-          <div className="text-center mt-12">
-            <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-              Load More Articles
-            </button>
-          </div>
+                {/* EXCERPT */}
+                <p className="text-gray-600 mb-5 line-clamp-3">
+                  {post.excerpt}
+                </p>
+
+              
+              </div>
+
+              {/* Hover Glow Border */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-[var(--secondary)] transition" />
+            </motion.article>
+          ))}
+
         </div>
-      </section>
 
+      
+
+      </div>
+    </section>
       {/* Newsletter Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter for the latest blog posts, recipes, and restaurant updates
-          </p>
-          
-          <div className="max-w-md mx-auto flex">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none"
-            />
-            <button className="bg-orange-600 hover:bg-orange-700 px-6 py-3 rounded-r-lg font-medium transition">
-              Subscribe
-            </button>
+   <section className="py-16 md:py-20 bg-[var(--primary)] relative overflow-hidden">
+
+      <div className="container mx-auto px-4 sm:px-6 flex justify-center relative z-10">
+
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="w-full max-w-2xl"
+        >
+
+          {/* GLASS CARD */}
+          <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 text-center shadow-2xl">
+
+            {/* Icon */}
+            <div className="flex justify-center mb-5 md:mb-6">
+              <div className="p-3 md:p-4 rounded-full bg-[var(--secondary)] text-white shadow-lg">
+                <Mail size={24} className="md:w-7 md:h-7" />
+              </div>
+            </div>
+
+            {/* Heading */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
+              Stay Updated With Delicious News
+            </h2>
+
+            <p className="text-gray-300 mb-6 md:mb-8 text-sm sm:text-base">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            </p>
+
+            {/* Input Area */}
+          {/* Input Area */}
+<div className="bg-white/10 border border-white/20 rounded-full p-2 backdrop-blur-xl flex items-center gap-2">
+
+  <input
+    type="email"
+    placeholder="Enter your email"
+    className="flex-1 bg-transparent px-5 py-3 text-white placeholder-gray-300 outline-none text-sm"
+  />
+
+  <motion.button
+    whileHover={{ scale: 1.08 }}
+    whileTap={{ scale: 0.95 }}
+    className="flex items-center gap-2 px-5 py-3 rounded-full bg-[var(--secondary)] text-white font-semibold shadow-lg whitespace-nowrap"
+  >
+    Subscribe
+    <Send size={16} />
+  </motion.button>
+
+</div>
+
+
           </div>
-        </div>
-      </section>
+
+        </motion.div>
+
+      </div>
+    </section>
     </div>
   );
 }

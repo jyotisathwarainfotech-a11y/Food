@@ -57,44 +57,45 @@ const chefs = [
     image: "/images/chef4.png",
   },
 ];
-
 const products = [
-    { name: "Burger Deluxe", image: "/images/sell1.png", price: "$110.46" },
-    { name: "Fried Chicken", image: "/images/sell2.png", price: "$60.50" },
-    { name: "Spicy Wings", image: "/images/sell3.png", price: "$50.00" },
-    { name: "Italian Pizza", image: "/images/sell4.jpg", price: "$80.00" },
-    { name: "Pasta Special", image: "/images/sell5.jpg", price: "$95.00" },
-  ];
+  { id: 1, name: "Burger Deluxe", image: "/images/sell1.png", price: "$110.46" },
+  { id: 2, name: "Fried Chicken", image: "/images/sell2.png", price: "$60.50" },
+  { id: 3, name: "Spicy Wings", image: "/images/sell3.png", price: "$50.00" },
+  { id: 4, name: "Italian Pizza", image: "/images/sell4.jpg", price: "$80.00" },
+  { id: 5, name: "Pasta Special", image: "/images/sell5.jpg", price: "$95.00" },
+];
+
 
 
 const faqData = [
   {
     question: "How is our handmade dough prepared?",
-    answer: "Our dough is prepared daily using organic flour and filtered water, then cold-fermented for 48 hours to ensure maximum flavor and a light, airy crust."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     question: "Do you offer vegan or gluten-free options?",
-    answer: "Absolutely! We offer cauliflower-based crusts and high-quality vegan cheese. Just let our server know about your dietary requirements."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     question: "What makes our 'Secret Sauce' so special?",
-    answer: "We use San Marzano tomatoes imported directly from Italy, simmered with fresh basil and a blend of 12 secret herbs for 6 hours."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     question: "Can I customize my own pizza toppings?",
-    answer: "Yes, you can be the chef! Choose from over 30 fresh ingredients to create your perfect masterpiece."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     question: "How long has the restaurant been serving food?",
-    answer: "We have been serving delicious food for over 20 years, and our passion for cooking has only grown stronger over the years."
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   }
 ];
 
 
 export default function Home() {
    const [activeTab, setActiveTab] = useState("Event Creating");
-   const { addToCart } = useCart();
+   
    const [activeIndex, setActiveIndex] = useState(0);
+   const { addToCart } = useCart();
 
    const handleAddToCart = (item) => {
     addToCart(item);
@@ -114,7 +115,7 @@ export default function Home() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/30"></div>
 
-        <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="max-w-7xl relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
           <motion.div
             className="text-left"
@@ -175,7 +176,7 @@ export default function Home() {
 
       {/* Featured Menu Items */}
       <section className="py-20 bg-gradient-to-r from-primary to-secondary text-white">
-        <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <div>
@@ -189,7 +190,7 @@ export default function Home() {
             </h2>
 
             <p className="text-gray-300 max-w-md mb-8">
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
             </p>
 
             {/* Category Pills */}
@@ -206,7 +207,7 @@ export default function Home() {
 
             <Link
               href="/menu"
-              className="inline-flex items-center border border-secondary gap-2 bg-secondary hover:bg-primary/90 px-8 py-4 rounded-full font-semibold transition transform hover:scale-105"
+              className="inline-flex items-center border border-secondary gap-2 bg-secondary hover:bg-primary/90 px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 text-primary"
             >
               Explore Full Menu →
             </Link>
@@ -262,7 +263,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-24 bg-gradient-to-r from-primary to-secondary text-white overflow-hidden">
-      <div className=" mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT IMAGE AREA */}
         <motion.div
@@ -364,115 +365,117 @@ export default function Home() {
       </div>
     </section>
 
-      {/* Stats Section */}
-      <section className="py-12 relative bg-primary text-white overflow-hidden">
-      {/* Top Wave */}
-      <svg
-        className="absolute top-0 left-0 w-full"
-        viewBox="0 0 1440 80"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="#FFF7ED"
-          d="
-            M0,30
-            Q40,10 80,30
-            T160,30 T240,30 T320,30 T400,30 T480,30
-            T560,30 T640,30 T720,30 T800,30 T880,30
-            T960,30 T1040,30 T1120,30 T1200,30
-            T1280,30 T1360,30 T1440,30
-            L1440,0 L0,0 Z"
-        />
-      </svg>
+     {/* Stats Section */}
+      <section className="relative bg-primary text-white overflow-hidden">
 
-      {/* LEFT IMAGE – Plate Style */}
-      <div className="hidden md:block absolute left-[-140px] top-1/2 -translate-y-1/2 z-0">
-        <div className="w-[540px] h-[540px] bg-white rounded-full shadow-2xl flex items-center justify-center">
-          <img
-            src="/images/home6.png"
-            alt="Burger"
-            className="w-[420px] object-contain"
+        {/* Top Wave */}
+        <svg
+          className="absolute top-0 left-0 w-full"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#FFF7ED"
+            d="
+              M0,30 Q40,10 80,30 T160,30 T240,30 T320,30 T400,30
+              T480,30 T560,30 T640,30 T720,30 T800,30
+              T880,30 T960,30 T1040,30 T1120,30
+              T1200,30 T1280,30 T1360,30 T1440,30
+              L1440,0 L0,0 Z"
           />
-        </div>
-      </div>
+        </svg>
 
-      {/* RIGHT IMAGE – Floating */}
-      <div className="hidden md:block absolute right-[-90px] top-1/2 -translate-y-1/2 z-0">
-        <img
-          src="/images/home1.png"
-          alt="Food"
-          className="w-[420px] lg:w-[480px] drop-shadow-2xl"
-        />
-      </div>
+        {/* Main Container */}
+        <div className="relative z-10 max-w-[1600px] 2xl:max-w-[1800px] mx-auto px-6 py-24">
 
-      {/* CENTER CONTENT */}
-      <div className="container mx-auto px-4 py-28 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-
-          {/* Heading */}
-          <span className="uppercase tracking-widest text-secondary font-semibold">
-            Save up to 50% off
-          </span>
-
-          <h2 className="text-4xl md:text-6xl font-extrabold mt-4 mb-6">
-            Flavors For
-            <span className="block text-secondary">Royalty</span>
-          </h2>
-
-          <p className="text-lg text-secondary mb-14">
-            Limited Time Offer – Don’t Miss Out 🍔
-          </p>
-
-          {/* Countdown */}
-          <div className="flex justify-center gap-4 mb-16 flex-wrap">
-            {[
-              { value: "15", label: "Days" },
-              { value: "20", label: "Hours" },
-              { value: "42", label: "Minutes" },
-              { value: "45", label: "Seconds" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-secondary text-primary rounded-xl px-6 py-4 min-w-[90px] text-center shadow-lg"
-              >
-                <div className="text-3xl font-bold">{item.value}</div>
-                <div className="text-sm font-medium text-primary">
-                  {item.label}
-                </div>
-              </div>
-            ))}
+          {/* LEFT IMAGE */}
+          <div className="hidden xl:block absolute left-0 top-1/2 -translate-y-1/2">
+            <div className="w-[420px] 2xl:w-[520px] h-[420px] 2xl:h-[520px] bg-white rounded-full shadow-2xl flex items-center justify-center">
+              <img
+                src="/images/home6.png"
+                alt="Burger"
+                className="w-[75%] object-contain"
+              />
+            </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "15+", label: "Years Experience" },
-              { value: "5000+", label: "Happy Customers" },
-              { value: "100+", label: "Menu Items" },
-              { value: "24/7", label: "Online Support" },
-            ].map((stat, i) => (
-              <div
-                key={i}
-                className="bg-secondary text-primary backdrop-blur-md rounded-2xl p-8 border border-orange-300"
-              >
-                <div className="text-4xl font-extrabold mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-primary font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+          {/* RIGHT IMAGE */}
+          <div className="hidden xl:block absolute right-0 top-1/2 -translate-y-1/2">
+            <img
+              src="/images/home1.png"
+              alt="Food"
+              className="w-[380px] 2xl:w-[480px] drop-shadow-2xl"
+            />
           </div>
 
+          {/* CENTER CONTENT */}
+          <div className="max-w-4xl mx-auto text-center">
+
+            <span className="uppercase tracking-widest text-secondary font-semibold">
+              Save up to 50% off
+            </span>
+
+            <h2 className="text-4xl md:text-6xl 2xl:text-7xl font-extrabold mt-4 mb-6">
+              Flavors For
+              <span className="block text-secondary">Royalty</span>
+            </h2>
+
+            <p className="text-lg text-secondary mb-14">
+              Limited Time Offer – Don’t Miss Out
+            </p>
+
+            {/* Countdown */}
+            <div className="flex justify-center gap-6 mb-16 flex-wrap">
+              {[
+                { value: "15", label: "Days" },
+                { value: "20", label: "Hours" },
+                { value: "42", label: "Minutes" },
+                { value: "45", label: "Seconds" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-secondary text-primary rounded-xl px-8 py-5 min-w-[110px] text-center shadow-lg"
+                >
+                  <div className="text-3xl 2xl:text-4xl font-bold">
+                    {item.value}
+                  </div>
+                  <div className="text-sm font-medium">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { value: "15+", label: "Years Experience" },
+                { value: "5000+", label: "Happy Customers" },
+                { value: "100+", label: "Menu Items" },
+                { value: "24/7", label: "Online Support" },
+              ].map((stat, i) => (
+                <div
+                  key={i}
+                  className="bg-secondary text-primary rounded-2xl p-8 2xl:p-10"
+                >
+                  <div className="text-4xl 2xl:text-5xl font-extrabold mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
 
       {/* menu section */}
     <section className="relative py-20 bg-primary overflow-hidden">
-      <div className="mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
 
           {/* LEFT IMAGE */}
@@ -554,7 +557,7 @@ export default function Home() {
     
     {/* Chef Section */}
     <section className="relative py-24 bg-primary text-white overflow-hidden">
-      <div className=" mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         
         {/* Heading */}
         <div className="text-center mb-16">
@@ -639,200 +642,305 @@ export default function Home() {
     </section>
     
     {/* Products Section */}
-    <section className="py-24 bg-primary overflow-hidden">
-      <div className="mx-auto px-4">
+      <section className="py-16 md:py-24 bg-primary overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
-        <div className="relative mb-16">
-          <div className="absolute right-0 top-0">
-            <Link
-              href="/menu"
-              className="px-8 py-3 bg-white text-black 
-              hover:bg-secondary hover:text-white 
-              rounded-xl shadow-md font-semibold 
-              transition duration-300 ease-in-out"
-            >
-              SEE ALL →
-            </Link>
-          </div>
+   
+   {/* Heading */}
+<div className="relative mb-12 md:mb-16">
 
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-extrabold">
-              <span className="text-secondary">BEST SELLING</span>{" "}
-              <span className="text-white italic">DISHES</span>
-            </h2>
+  {/* Title */}
+  <div className="text-center max-w-3xl mx-auto">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+      <span className="text-secondary">BEST SELLING</span>{" "}
+      <span className="text-white italic block sm:inline">
+        DISHES
+      </span>
+    </h2>
 
-            <p className="text-white/80 mt-5 text-base md:text-lg leading-relaxed">
-              Discover our most loved and top-rated dishes crafted with premium 
-              ingredients and authentic flavors.
+    <p className="text-white/80 mt-4 md:mt-5 text-sm sm:text-base md:text-lg leading-relaxed px-2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
+    </p>
+
+    {/* SEE ALL → (Mobile & Tablet) */}
+    <div className="mt-6 md:hidden">
+      <Link
+        href="/menu"
+        className="inline-block px-6 py-2.5 
+        bg-white text-black
+        hover:bg-secondary hover:text-white 
+        rounded-xl shadow-md font-semibold 
+        transition duration-300 text-sm"
+      >
+        SEE ALL →
+      </Link>
+    </div>
+  </div>
+
+  {/* SEE ALL → (Desktop Only) */}
+  <div className="hidden md:block absolute right-0 top-10">
+    <Link
+      href="/menu"
+      className="px-8 py-3 
+      bg-white text-black
+      hover:bg-secondary hover:text-white 
+      rounded-xl shadow-md font-semibold 
+      transition duration-300"
+    >
+      SEE ALL →
+    </Link>
+  </div>
+
+</div>
+
+
+    {/* Auto Scroll */}
+    <div className="relative w-full overflow-hidden">
+      <div className="flex gap-5 sm:gap-6 md:gap-8 animate-scroll hover:[animation-play-state:paused] py-4">
+
+        {[...products, ...products].map((item, index) => (
+          <div
+            key={index}
+            className="
+            min-w-[250px] 
+            sm:min-w-[270px] 
+            md:min-w-[300px] 
+            bg-[#f5efe6] rounded-3xl p-5 md:p-6
+            relative group transition duration-500
+            hover:scale-105 hover:bg-white
+            hover:shadow-[8px_8px_0px_#d4a155]"
+          >
+
+            {/* Wishlist */}
+            <div className="absolute top-4 right-4 text-secondary">
+              <Heart size={18} />
+            </div>
+
+            {/* Image */}
+            <div className="flex justify-center mb-5 md:mb-6">
+              <Image
+                src={item.image}
+                alt={item.name}
+                width={180}
+                height={180}
+                className="object-contain transition duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            {/* Info */}
+            <h3 className="font-bold text-primary text-base md:text-lg mb-2">
+              {item.name}
+            </h3>
+
+            <p className="text-secondary font-bold text-base md:text-lg mb-6">
+              {item.price}
             </p>
+
+            {/* Add To Cart */}
+            <button
+              // onClick={() => handleAddToCart(item)}
+              onClick={() => addToCart(item)}
+              className="absolute bottom-0 left-0 w-full 
+              bg-secondary text-white py-2.5 md:py-3
+              rounded-b-3xl opacity-0 
+              group-hover:opacity-100 
+              transition duration-300 text-sm md:text-base"
+            >
+              Add To Cart
+            </button>
           </div>
-        </div>
-
-        {/* Auto Scroll */}
-        <div className="relative w-full overflow-hidden">
-          <div className="flex gap-8 animate-scroll hover:[animation-play-state:paused] m-4">
-
-            {[...products, ...products].map((item, index) => (
-              <div
-                key={index}
-                className="min-w-[300px] bg-[#f5efe6] rounded-3xl p-6 
-                relative group transition duration-500
-                hover:scale-105 hover:bg-white 
-                hover:shadow-[8px_8px_0px_#d4a155]"
-              >
-
-                {/* Wishlist */}
-                <div className="absolute top-4 right-4 text-secondary">
-                  <Heart size={18} />
-                </div>
-
-                {/* Image */}
-                <div className="flex justify-center mb-6">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={200}
-                    height={200}
-                    className="object-contain transition duration-500 group-hover:scale-110"
-                  />
-                </div>
-
-                {/* Info */}
-                <h3 className="font-bold text-primary text-lg mb-2">
-                  {item.name}
-                </h3>
-
-                <p className="text-secondary font-bold text-lg mb-6">
-                  {item.price}
-                </p>
-
-                {/* Add To Cart Button (Hidden by default) */}
-                <button
-                  onClick={() => handleAddToCart(item)}
-                  className="absolute bottom-0 left-0 w-full 
-                  bg-secondary text-white py-3 
-                  rounded-b-3xl opacity-0 
-                  group-hover:opacity-100 
-                  transition duration-300"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
 
-      {/* Scroll Animation */}
-      <style jsx>{`
-        .animate-scroll {
-          animation: scroll 25s linear infinite;
-        }
+  {/* Scroll Animation */}
+  <style jsx>{`
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
 
-        @keyframes scroll {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
-    </section>
+    @media (max-width: 768px) {
+      .animate-scroll {
+        animation: scroll 40s linear infinite;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  `}</style>
+      </section>
+
 
     {/* Testimonials */}
-    <section className="relative py-24 bg-primary overflow-hidden">
+  <section className="relative py-16 md:py-24 bg-primary overflow-hidden">
 
-      {/* Decorative Elements */}
-      <img src="/images/cartoon4.png" className="absolute left-10 top-10 w-24 opacity-90" alt="" />
-      <img src="/images/img4.png" className="absolute -left-10 bottom-10 w-40" alt="" />
-      <img src="/images/takos1.png" className="absolute right-4 top-4 w-44" alt="" />
+  {/* Decorative Elements (Responsive) */}
+  <img src="/images/cartoon4.png"
+    className="hidden sm:block absolute left-4 md:left-10 top-6 md:top-10 w-16 md:w-24 opacity-90"
+    alt=""
+  />
+  <img src="/images/img4.png"
+    className="hidden sm:block absolute -left-6 md:-left-10 bottom-6 md:bottom-10 w-28 md:w-40"
+    alt=""
+  />
+  <img src="/images/takos1.png"
+    className="hidden sm:block absolute right-2 md:right-4 top-2 md:top-4 w-28 md:w-44"
+    alt=""
+  />
 
-      <div className="container mx-auto px-6">
+  <div className="container mx-auto px-4 sm:px-6">
 
-        {/* Heading Section */}
-        <div className="text-center mb-20">
-          <p className="text-secondary font-bold tracking-[0.2em] text-sm mb-2">
-            TESTIMONIALS
-          </p>
-          <h2 className="text-4xl md:text-5xl font-black text-white">
-            OUR CUSTOMERS <span className="text-secondary uppercase">Feedback</span>
-          </h2>
-          {/* Decorative Divider */}
-          <div className="flex justify-center items-center mt-4 gap-4">
-             <div className="h-[2px] w-12 bg-secondary rounded-full"></div>
-             <div className="w-3 h-3 border-2 border-secondary rounded-full"></div>
-             <div className="h-[2px] w-12 bg-secondary rounded-full"></div>
-          </div>
-        </div>
+    {/* Heading */}
+    <div className="text-center mb-12 md:mb-20">
+      <p className="text-secondary font-bold tracking-[0.2em] text-xs sm:text-sm mb-2">
+        TESTIMONIALS
+      </p>
 
-        {/* Testimonials Grid */}
-        <div className="grid lg:grid-cols-2 gap-y-20 gap-x-10 max-w-7xl mx-auto">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
+        OUR CUSTOMERS{" "}
+        <span className="text-secondary uppercase">Feedback</span>
+      </h2>
 
-          {/* LEFT TESTIMONIAL (Victoria) */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative flex flex-col items-start"
-          >
-            {/* The Quote Card */}
-            <div className="bg-[#fdf6e9] rounded-tl-[100px] rounded-tr-[100px] rounded-bl-[100px] p-10 md:p-14 pb-20 w-full relative min-h-[300px]">
-              <div className="text-secondary mb-4">
-                 <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V8H4.01697C7.33068 8 10.017 10.6863 10.017 14V21H3.01697Z" /></svg>
-              </div>
-              <p className="text-primary text-lg italic leading-relaxed max-w-[65%]">
-                "Every pizza starts with our hand-tossed dough, made fresh daily and topped with our signature sauce crafted from ripe tomatoes and secret herbs."
-              </p>
-            </div>
-
-            {/* Person Image - Positioned Absolute to overlap */}
-            <div className="absolute -right-4 bottom-12 w-1/2 z-10">
-              <img src="/images/1.png" alt="Victoria" className="w-full h-auto object-contain" />
-            </div>
-
-            {/* Name Label - Positioned to match image */}
-            <div className="bg-secondary text-white rounded-tr-[50px] rounded-br-[50px] rounded-bl-[50px] px-10 py-5 -mt-10 relative z-20 shadow-lg min-w-[280px]">
-              <h4 className="font-bold text-xl">Victoria Wotton</h4>
-              <p className="text-sm opacity-90">Fementum Odio Co.</p>
-              <div className="flex mt-2 text-primary text-sm">★★★★★</div>
-            </div>
-          </motion.div>
-
-          {/* RIGHT TESTIMONIAL (Emma) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative flex flex-col items-start"
-          >
-            {/* The Quote Card */}
-            <div className="bg-[#fdf6e9] rounded-tl-[100px] rounded-tr-[100px] rounded-br-[100px] p-10 md:p-14 pb-20 w-full relative min-h-[300px]">
-              <div className="text-secondary mb-4">
-                 <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V8H4.01697C7.33068 8 10.017 10.6863 10.017 14V21H3.01697Z" /></svg>
-              </div>
-              <p className="text-primary text-lg italic leading-relaxed max-w-[65%]">
-                "Freshly tossed dough forms the base of every pizza, of the name topped with a homemade sauce made from juicy tomatoes and our special herb recipe."
-              </p>
-            </div>
-
-            {/* Person Image */}
-            <div className="absolute -right-4 bottom-12 w-1/2 z-10">
-              <img src="/images/2.png" alt="Emma" className="w-full h-auto object-contain" />
-            </div>
-
-            {/* Name Label */}
-            <div className="bg-secondary text-white rounded-tl-[50px] rounded-br-[50px] rounded-bl-[50px] px-10 py-5 -mt-10 relative z-20 shadow-lg min-w-[280px]">
-              <h4 className="font-bold text-xl">Emma Mia</h4>
-              <p className="text-sm opacity-90">Fementum Odio Co.</p>
-              <div className="flex mt-2 text-primary text-sm">★★★★★</div>
-            </div>
-          </motion.div>
-
-        </div>
+      <div className="flex justify-center items-center mt-4 gap-3">
+        <div className="h-[2px] w-8 sm:w-12 bg-secondary rounded-full"></div>
+        <div className="w-2.5 h-2.5 border-2 border-secondary rounded-full"></div>
+        <div className="h-[2px] w-8 sm:w-12 bg-secondary rounded-full"></div>
       </div>
-    </section>
+    </div>
+
+    {/* Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 md:gap-y-20 gap-x-10 max-w-7xl mx-auto">
+
+      {/* LEFT */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="relative flex flex-col items-start"
+      >
+
+        {/* Card */}
+        <div className="bg-[#fdf6e9]
+          rounded-tl-[60px] sm:rounded-tl-[80px] md:rounded-tl-[100px]
+          rounded-tr-[60px] sm:rounded-tr-[80px] md:rounded-tr-[100px]
+          rounded-bl-[60px] sm:rounded-bl-[80px] md:rounded-bl-[100px]
+          p-6 sm:p-8 md:p-14
+          pb-16 md:pb-20
+          w-full relative min-h-[220px] sm:min-h-[260px] md:min-h-[300px]">
+
+          <div className="text-secondary mb-4">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V8H4.01697C7.33068 8 10.017 10.6863 10.017 14V21H3.01697Z" />
+            </svg>
+          </div>
+
+          <p className="text-primary text-sm sm:text-base md:text-lg italic leading-relaxed max-w-full md:max-w-[65%]">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
+          </p>
+        </div>
+
+        {/* Image (Same Right Direction Maintained) */}
+        <div className="
+          absolute
+          right-0
+          bottom-8 md:bottom-12
+          w-40 sm:w-52 md:w-1/2
+          z-10
+        ">
+          <img src="/images/1.png" alt="Victoria" className="w-full h-auto object-contain" />
+        </div>
+
+        {/* Name */}
+        <div className="
+          bg-secondary text-white
+          rounded-tr-[30px] sm:rounded-tr-[50px]
+          rounded-br-[30px] sm:rounded-br-[50px]
+          rounded-bl-[30px] sm:rounded-bl-[50px]
+          px-6 sm:px-10 py-4 sm:py-5
+          -mt-6 sm:-mt-10
+          relative z-20 shadow-lg
+          min-w-[220px] sm:min-w-[280px]
+        ">
+          <h4 className="font-bold text-lg sm:text-xl">
+            Victoria Wotton
+          </h4>
+          <p className="text-xs sm:text-sm opacity-90">
+            Fementum Odio Co.
+          </p>
+          <div className="flex mt-2 text-primary text-sm">★★★★★</div>
+        </div>
+
+      </motion.div>
+
+     
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="relative flex flex-col items-start"
+      >
+
+        <div className="bg-[#fdf6e9]
+          rounded-tl-[60px] sm:rounded-tl-[80px] md:rounded-tl-[100px]
+          rounded-tr-[60px] sm:rounded-tr-[80px] md:rounded-tr-[100px]
+          rounded-br-[60px] sm:rounded-br-[80px] md:rounded-br-[100px]
+          p-6 sm:p-8 md:p-14
+          pb-16 md:pb-20
+          w-full relative min-h-[220px] sm:min-h-[260px] md:min-h-[300px]">
+
+          <div className="text-secondary mb-4">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017V14C19.017 11.7909 17.2261 10 15.017 10H14.017V8H15.017C18.3307 8 21.017 10.6863 21.017 14V21H14.017ZM3.01697 21L3.01697 18C3.01697 16.8954 3.9124 16 5.01697 16H8.01697V14C8.01697 11.7909 6.22611 10 4.01697 10H3.01697V8H4.01697C7.33068 8 10.017 10.6863 10.017 14V21H3.01697Z" />
+            </svg>
+          </div>
+
+          <p className="text-primary text-sm sm:text-base md:text-lg italic leading-relaxed max-w-full md:max-w-[65%]">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
+          </p>
+        </div>
+
+        <div className="
+          absolute
+          right-0
+          bottom-8 md:bottom-12
+          w-40 sm:w-52 md:w-1/2
+          z-10
+        ">
+          <img src="/images/2.png" alt="Emma" className="w-full h-auto object-contain" />
+        </div>
+
+        <div className="
+          bg-secondary text-white
+          rounded-tl-[30px] sm:rounded-tl-[50px]
+          rounded-br-[30px] sm:rounded-br-[50px]
+          rounded-bl-[30px] sm:rounded-bl-[50px]
+          px-6 sm:px-10 py-4 sm:py-5
+          -mt-6 sm:-mt-10
+          relative z-20 shadow-lg
+          min-w-[220px] sm:min-w-[280px]
+        ">
+          <h4 className="font-bold text-lg sm:text-xl">
+            Emma Mia
+          </h4>
+          <p className="text-xs sm:text-sm opacity-90">
+            Fementum Odio Co.
+          </p>
+          <div className="flex mt-2 text-primary text-sm">★★★★★</div>
+        </div>
+
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
 
     {/* FAQ */}
     <section className="relative py-24 bg-primary overflow-hidden">
@@ -842,15 +950,15 @@ export default function Home() {
           alt="FAQ Background"
           className="w-full h-full object-cover"
         />
-        {/* Dark Overlay */}
+        
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* Decorative Background Elements */}
+    
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* Left Side: Static Info */}
+         
           <div className="lg:w-1/3">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -864,7 +972,7 @@ export default function Home() {
                 HAVE ANY <span className="text-secondary">QUESTIONS?</span>
               </h2>
               <p className="text-white mb-8 leading-relaxed">
-                We're here to help! If you don't find what you're looking for, feel free to reach out to our support team.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat.
               </p>
               
               {/* Unique Support Card */}
@@ -877,10 +985,12 @@ export default function Home() {
                   </div>
                 </div>
                 <h4 className="font-bold text-xl text-secondary mb-2">Still Curious?</h4>
-                <p className="text-green-100 text-sm mb-6">Ask us anything about our ingredients or sourcing.</p>
+                <p className="text-green-100 text-sm mb-6">.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <Link href={"/contact"}>
                 <button className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-white transition-colors">
                   Contact Us
                 </button>
+                </Link>
               </div>
             </motion.div>
           </div>
