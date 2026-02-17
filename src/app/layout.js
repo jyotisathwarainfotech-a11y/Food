@@ -26,7 +26,7 @@ export const metadata = {
   description: "Experience the finest cuisine at FoodDelight restaurant. Fresh ingredients, expert chefs, and unforgettable dining.",
     icons: {
     icon: [
-      { url: "/mainfavicon.png",sizes: "80x80" , type: "image/png" },
+      { url: "/mainfavicon.webp",sizes: "80x80" , type: "image/webp" },
     ],
   },
 };

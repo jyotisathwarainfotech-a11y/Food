@@ -375,7 +375,7 @@ export default function CombinedHeader() {
 
        <Link href="/" className="flex items-center gap-3">
   <Image
-    src={scrolled ? "/logo1.png" : "/mainlogo-removebg.png"} 
+    src={scrolled ? "/logo1.webp" : "/mainlogo-removebg.webp"} 
     alt="FoodZentro Logo"
     width={60}
     height={60}

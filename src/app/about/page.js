@@ -12,21 +12,21 @@ const teamMembers = [
     id: 1,
     name: "Chef Maria Rodriguez",
     role: "Founder & Head Chef",
-    img: "/images/chef5.jpg",
+    img: "/images/chef5.webp",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 2,
     name: "Chef James Wilson",
     role: "Sous Chef",
-    img: "/images/chef6.jpg",
+    img: "/images/chef6.webp",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   },
   {
     id: 3,
     name: "Sarah Johnson",
     role: "Restaurant Manager",
-    img: "/images/chef7.jpg",
+    img: "/images/chef7.webp",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis arcu nunc. Cras sit amet tellus vel metus accumsan consequat."
   }
 ];
@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/img3.jpg"   
+        src="/images/img3.webp"   
         alt="Background"
         fill
         priority
@@ -69,7 +69,7 @@ export default function AboutPage() {
           className="mb-10 md:mb-0"
         >
           <Image
-            src="/images/cartoon2.png"
+            src="/images/cartoon2.webp"
             alt="Burger"
             width={320}
             height={320}
@@ -175,7 +175,7 @@ export default function AboutPage() {
           {/* LEFT IMAGE */}
           <div className="absolute left-0 top-6 sm:top-10 w-[45%] h-[60%] rounded-3xl overflow-hidden shadow-2xl z-10">
             <Image
-              src="/images/img3.jpg"
+              src="/images/img3.webp"
               alt="Chef"
               fill
               className="object-cover"
@@ -185,7 +185,7 @@ export default function AboutPage() {
           {/* TOP RIGHT */}
           <div className="absolute right-0 top-0 w-[45%] h-[50%] rounded-3xl overflow-hidden shadow-xl z-20 border-4 border-white">
             <Image
-              src="/images/img2.jpg"
+              src="/images/img2.webp"
               alt="Chef"
               fill
               className="object-cover"
@@ -195,7 +195,7 @@ export default function AboutPage() {
           {/* BOTTOM RIGHT */}
           <div className="absolute right-0 bottom-0 w-[50%] h-[50%] rounded-3xl overflow-hidden shadow-xl z-20 border-4 border-white">
             <Image
-              src="/images/img1.jpg"
+              src="/images/img1.webp"
               alt="Restaurant"
               fill
               className="object-cover"
@@ -229,7 +229,7 @@ export default function AboutPage() {
       {/* Values Section */}
       <section
         className="relative py-28 bg-fixed bg-center bg-cover overflow-hidden"
-        style={{ backgroundImage: "url('/images/sell1.png')" }}
+        style={{ backgroundImage: "url('/images/sell1.webp')" }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-secondary/10 z-0"></div>
@@ -282,7 +282,7 @@ export default function AboutPage() {
                     className="absolute -top-24 -right-24 z-40 scale-110"
                   >
                     {/* <Image
-                      src="/images/cartoon5.png"
+                      src="/images/cartoon5.webp"
                       alt="Cartoon"
                       width={220}
                       height={220}
@@ -388,7 +388,7 @@ export default function AboutPage() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/bg1.jpg" 
+          src="/images/bg1.webp" 
           alt="Restaurant Background"
           className="w-full h-full object-cover scale-110 animate-slowZoom"
         />

@@ -46,7 +46,7 @@ export default function ContactPage() {
       
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/home2.jpg" 
+            src="/images/home2.webp" 
             alt="Contact Background"
             className="w-full h-full object-cover"
           />
@@ -182,7 +182,7 @@ export default function ContactPage() {
               {/* Background Image */}
               <div className="absolute inset-0">
                 <img
-                  src="/images/img6.png"  
+                  src="/images/img6.webp"  
                   alt="Form Background"
                   className="w-full h-full object-cover"
                 />
@@ -251,12 +251,12 @@ export default function ContactPage() {
         <motion.img 
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          src="/images/pizza1.png" 
+          src="/images/pizza1.webp" 
           className="absolute bottom-10 right-10 w-32 h-32 md:w-48 md:h-48 object-contain z-10"
           alt="Pizza"
         />
         <img 
-          src="/images/pizza2.png" 
+          src="/images/pizza2.webp" 
           className="absolute top-20 left-10 w-40 opacity-20 pointer-events-none" 
           alt="Decoration"
         />

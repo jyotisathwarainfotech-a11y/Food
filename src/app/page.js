@@ -39,30 +39,30 @@ const chefs = [
   {
     name: "Jimmie K. Cryer",
     role: "CEO & Founder",
-    image: "/images/chef1.png",
+    image: "/images/chef1.webp",
   },
   {
     name: "Keneth Conroy",
     role: "Senior Chef",
-    image: "/images/chef2.png",
+    image: "/images/chef2.webp",
   },
   {
     name: "Antony Taylor",
     role: "Assistant Chef",
-    image: "/images/chef3.png",
+    image: "/images/chef3.webp",
   },
   {
     name: "Jame Radley",
     role: "Chef Cook",
-    image: "/images/chef4.png",
+    image: "/images/chef4.webp",
   },
 ];
 const products = [
-  { id: 1, name: "Burger Deluxe", image: "/images/sell1.png", price: "$110.46" },
-  { id: 2, name: "Fried Chicken", image: "/images/sell2.png", price: "$60.50" },
-  { id: 3, name: "Spicy Wings", image: "/images/sell3.png", price: "$50.00" },
-  { id: 4, name: "Italian Pizza", image: "/images/sell4.jpg", price: "$80.00" },
-  { id: 5, name: "Pasta Special", image: "/images/sell5.jpg", price: "$95.00" },
+  { id: 1, name: "Burger Deluxe", image: "/images/sell1.webp", price: "$110.46" },
+  { id: 2, name: "Fried Chicken", image: "/images/sell2.webp", price: "$60.50" },
+  { id: 3, name: "Spicy Wings", image: "/images/sell3.webp", price: "$50.00" },
+  { id: 4, name: "Italian Pizza", image: "/images/sell4.webp", price: "$80.00" },
+  { id: 5, name: "Pasta Special", image: "/images/sell5.webp", price: "$95.00" },
 ];
 
 
@@ -107,7 +107,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden"
         style={{
-          backgroundImage: "url('/images/img2.jpg')",
+          backgroundImage: "url('/images/img2.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -124,7 +124,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="flex items-center gap-2 text-secondary mb-4">
-              <img src="/images/img4.png" alt="Chili" className="w-8" />
+              <img src="/images/img4.webp" alt="Chili" className="w-8" />
               <span className="text-sm tracking-wide">
                 Start price only $25
               </span>
@@ -156,7 +156,7 @@ export default function Home() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
           >
             <img
-              src="/images/img5.png"
+              src="/images/img5.webp"
               alt="Food Dish"
               className="w-[420px] drop-shadow-2xl animate-float"
             />
@@ -221,12 +221,12 @@ export default function Home() {
               {
                 name: "Spicy Grilled Chicken",
                 price: "$22.99",
-                img: "/images/img1.jpg",
+                img: "/images/img1.webp",
               },
               {
                 name: "Creamy Truffle Pasta",
                 price: "$18.50",
-                img: "/images/img3.jpg",
+                img: "/images/img3.webp",
               },
             ].map((dish, i) => (
               <div
@@ -276,7 +276,7 @@ export default function Home() {
           {/* Main Image */}
           <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
             <img
-              src="/images/img6.png"
+              src="/images/img6.webp"
               alt="Restaurant Story"
               className="w-full h-[480px] object-cover"
             />
@@ -392,7 +392,7 @@ export default function Home() {
           <div className="hidden xl:block absolute left-0 top-1/2 -translate-y-1/2">
             <div className="w-[420px] 2xl:w-[520px] h-[420px] 2xl:h-[520px] bg-white rounded-full shadow-2xl flex items-center justify-center">
               <img
-                src="/images/home6.png"
+                src="/images/home6.webp"
                 alt="Burger"
                 className="w-[75%] object-contain"
               />
@@ -402,7 +402,7 @@ export default function Home() {
           {/* RIGHT IMAGE */}
           <div className="hidden xl:block absolute right-0 top-1/2 -translate-y-1/2">
             <img
-              src="/images/home1.png"
+              src="/images/home1.webp"
               alt="Food"
               className="w-[380px] 2xl:w-[480px] drop-shadow-2xl"
             />
@@ -482,7 +482,7 @@ export default function Home() {
           <div className="flex justify-center lg:justify-start">
             <div className="w-[350px] h-[520px] overflow-hidden rounded-t-full rounded-b-full">
               <img
-                src="/images/home2.jpg"
+                src="/images/home2.webp"
                 alt="Food"
                 className="w-full h-full object-cover"
               />
@@ -522,7 +522,7 @@ export default function Home() {
             {menuData[activeTab].map((item, i) => (
               <div key={i} className="flex items-center gap-4">
                 <img
-                  src="/images/img2.jpg"
+                  src="/images/img2.webp"
                   className="w-12 h-12 rounded-full object-cover"
                   alt=""
                 />
@@ -544,7 +544,7 @@ export default function Home() {
           <div className="flex justify-center lg:justify-end">
             <div className="w-[350px] h-[520px] overflow-hidden rounded-t-full rounded-b-full">
               <img
-                src="/images/home3.jpg"
+                src="/images/home3.webp"
                 alt="Burger"
                 className="w-full h-full object-cover"
               />
@@ -782,15 +782,15 @@ export default function Home() {
   <section className="relative py-16 md:py-24 bg-primary overflow-hidden">
 
   {/* Decorative Elements (Responsive) */}
-  <img src="/images/cartoon4.png"
+  <img src="/images/cartoon4.webp"
     className="hidden sm:block absolute left-4 md:left-10 top-6 md:top-10 w-16 md:w-24 opacity-90"
     alt=""
   />
-  <img src="/images/img4.png"
+  <img src="/images/img4.webp"
     className="hidden sm:block absolute -left-6 md:-left-10 bottom-6 md:bottom-10 w-28 md:w-40"
     alt=""
   />
-  <img src="/images/takos1.png"
+  <img src="/images/takos1.webp"
     className="hidden sm:block absolute right-2 md:right-4 top-2 md:top-4 w-28 md:w-44"
     alt=""
   />
@@ -854,7 +854,7 @@ export default function Home() {
           w-40 sm:w-52 md:w-1/2
           z-10
         ">
-          <img src="/images/1.png" alt="Victoria" className="w-full h-auto object-contain" />
+          <img src="/images/1.webp" alt="Victoria" className="w-full h-auto object-contain" />
         </div>
 
         {/* Name */}
@@ -913,7 +913,7 @@ export default function Home() {
           w-40 sm:w-52 md:w-1/2
           z-10
         ">
-          <img src="/images/2.png" alt="Emma" className="w-full h-auto object-contain" />
+          <img src="/images/2.webp" alt="Emma" className="w-full h-auto object-contain" />
         </div>
 
         <div className="
@@ -946,7 +946,7 @@ export default function Home() {
     <section className="relative py-24 bg-primary overflow-hidden">
       <div className="absolute inset-0">
         <img 
-          src="/images/home2.jpg"   
+          src="/images/home2.webp"   
           alt="FAQ Background"
           className="w-full h-full object-cover"
         />
@@ -979,7 +979,7 @@ export default function Home() {
               <div className="bg-primary/60 p-8 rounded-[40px] text-white flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4">
                   <div className="text-4xl flex items-center justify-center">
-                    <Image src="/images/home6.png"
+                    <Image src="/images/home6.webp"
                     className="w-32 h-18"
                      alt="Support" width={60} height={60} />
                   </div>

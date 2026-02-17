@@ -14,7 +14,7 @@ const chefData = [
     experience: '20+ years',
     specialty: 'Mediterranean Cuisine',
     bio: 'Maria brings her family\'s culinary traditions from Spain, combining traditional techniques with modern innovation.',
-    image: '/images/chef1.png',
+    image: '/images/chef1.webp',
     awards: ['James Beard Award 2018', 'Top Chef 2019', 'Culinary Excellence 2020']
   },
   {
@@ -24,7 +24,7 @@ const chefData = [
     experience: '15 years',
     specialty: 'Modern Fusion',
     bio: 'James specializes in creating innovative dishes that blend international flavors with local ingredients.',
-    image: '/images/chef2.png',
+    image: '/images/chef2.webp',
     awards: ['Rising Star Chef 2021', 'Innovation Award 2022']
   },
   {
@@ -34,7 +34,7 @@ const chefData = [
     experience: '12 years',
     specialty: 'Artisan Desserts',
     bio: 'Sophia creates stunning desserts that are as beautiful as they are delicious, with expertise in French pastry techniques.',
-    image: '/images/chef3.png',
+    image: '/images/chef3.webp',
     awards: ['Best Pastry Chef 2020', 'Dessert Innovation 2021']
   },
   {
@@ -44,18 +44,18 @@ const chefData = [
     experience: '18 years',
     specialty: 'Grilled Specialties',
     bio: 'Marcus perfects the art of grilling, bringing out incredible flavors in meats and vegetables with his signature techniques.',
-    image: '/images/chef4.png',
+    image: '/images/chef4.webp',
     awards: ['Best Grill Chef 2019', 'BBQ Master 2020']
   }
 ];
 
 const images = [
     "/images/roll1.webp",
-    "/images/roll2.jpg",
-    "/images/home2.jpg",
-    "/images/home3.jpg",
-    "/images/img2.jpg",
-    "/images/home2.jpg",
+    "/images/roll2.webp",
+    "/images/home2.webp",
+    "/images/home3.webp",
+    "/images/img2.webp",
+    "/images/home2.webp",
   ];
 
 export default function ChefsPage() {
@@ -106,7 +106,7 @@ export default function ChefsPage() {
         >
           <div className="relative w-[300px] sm:w-[400px] lg:w-[500px] h-[400px] lg:h-[600px]">
             <Image
-              src="/images/makefood.jpg"
+              src="/images/makefood.webp"
               alt="Master Chef"
               fill
               className="object-contain drop-shadow-[0_20px_40px_#d4a155] rounded-t-full"
@@ -248,7 +248,7 @@ export default function ChefsPage() {
       >
         <div className="relative w-48 h-48">
           <Image
-            src="/images/cartoon1.png"
+            src="/images/cartoon1.webp"
             alt="Taco"
             fill
             className="object-contain"
@@ -310,7 +310,7 @@ export default function ChefsPage() {
       >
         <div className="relative w-48 h-48">
           <Image
-            src="/images/cartoon6.png"
+            src="/images/cartoon6.webp"
             alt="Fries"
             fill
             className="object-contain"

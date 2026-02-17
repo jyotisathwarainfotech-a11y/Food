@@ -15,7 +15,7 @@ const blogPosts = [
     date: '2024-01-15',
     author: 'Chef Marcus Johnson',
     category: 'Cooking Tips',
-    image: '/images/blog1.jpg',
+    image: '/images/blog1.webp',
     readTime: '5 min read'
   },
   {
@@ -35,7 +35,7 @@ const blogPosts = [
     date: '2024-01-10',
     author: 'Sarah Johnson',
     category: 'Behind the Scenes',
-    image: '/images/blog3.jpg',
+    image: '/images/blog3.webp',
     readTime: '4 min read'
   },
   {
@@ -55,7 +55,7 @@ const blogPosts = [
     date: '2024-01-05',
     author: 'Chef Sophia Chen',
     category: 'Holiday Specials',
-    image: '/images/blog1.jpg',
+    image: '/images/blog1.webp',
     readTime: '8 min read'
   },
   {
@@ -65,7 +65,7 @@ const blogPosts = [
     date: '2024-01-03',
     author: 'FoodDelight Team',
     category: 'Sustainability',
-    image: '/images/blog3.jpg',
+    image: '/images/blog3.webp',
     readTime: '5 min read'
   }
 ];
@@ -154,45 +154,6 @@ export default function BlogPage() {
       <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-primary to-transparent" />
 
     </section>
-
-      {/* Category Filter */}
-    {/* <section className="py-8 bg-primary sticky top-16 z-40 border-b border-secondary/20 backdrop-blur-lg">
-
-    
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-secondary/60" />
-
-      <div className="container mx-auto px-4">
-
-        <div className="flex flex-wrap justify-center gap-4">
-
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActive(category)}
-              className={`
-                relative px-7 py-3 rounded-full font-semibold
-                transition-all duration-300
-                border backdrop-blur-md
-
-                ${
-                  active === category
-                    ? "bg-secondary text-primary border-secondary shadow-[0_0_20px_rgba(212,161,85,0.4)] scale-105"
-                    : "bg-white/5 text-gray-300 border-white/10 hover:border-secondary hover:text-secondary hover:bg-white/10 hover:scale-105"
-                }
-              `}
-            >
-              {category}
-
-            
-              {active === category && (
-                <span className="absolute inset-0 rounded-full border border-secondary animate-pulse opacity-60" />
-              )}
-            </button>
-          ))}
-
-        </div>
-      </div>
-    </section> */}
 
       {/* Blog Posts Grid */}
    <section className="py-12 bg-[var(--primary)]">
@@ -309,7 +270,7 @@ export default function BlogPage() {
              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             </p>
 
-            {/* Input Area */}
+           
           {/* Input Area */}
 <div className="bg-white/10 border border-white/20 rounded-full p-2 backdrop-blur-xl flex items-center gap-2">
 

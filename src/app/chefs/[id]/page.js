@@ -15,7 +15,7 @@ const chefsData = [
     longBio: 'Maria Rodriguez\'s journey in culinary arts began at her grandmother\'s kitchen in Andalusia, Spain. After formal training at the prestigious Le Cordon Bleu in Paris, she worked in renowned restaurants across Europe before founding FoodDelight. Her expertise spans traditional Mediterranean cooking with a modern twist, creating dishes that tell stories of her heritage while embracing contemporary flavors. Maria\'s philosophy centers on using the finest seasonal ingredients and letting their natural flavors shine.',
     specialties: ['Spanish Tapas', 'Seafood Paella', 'Mediterranean Grilled Dishes', 'Traditional Stews'],
     awards: ['James Beard Award 2018', 'Top Chef 2019', 'Culinary Excellence 2020'],
-    image: '/placeholder.jpg'
+    image: '/placeholder.webp'
   },
   {
     id: '2',
@@ -27,7 +27,7 @@ const chefsData = [
     longBio: 'Chef James Wilson brings a fresh perspective to culinary arts with his innovative fusion approach. His diverse background includes apprenticeships in Tokyo\'s Michelin-starred restaurants, cooking in Peru\'s acclaimed gastonomy scene, and experimenting with modern techniques at elBulli alum establishments. James holds degrees in both classical French cuisine and Food Science, which enables him to create unexpected combinations while maintaining balance and technique perfection.',
     specialties: ['Fusion Small Plates', 'Creative Sauces', 'Global Seasoning Techniques', 'Modern Plating'],
     awards: ['Rising Star Chef 2021', 'Innovation Award 2022'],
-    image: '/placeholder.jpg'
+    image: '/placeholder.webp'
   },
   {
     id: '3',
@@ -39,7 +39,7 @@ const chefsData = [
     longBio: 'Sophia Chen\'s passion for pastry arts was ignited during her studies at the French Pastry School in Chicago. Her meticulous attention to detail and artistic flair have made her one of the most sought-after pastry chefs in the region. Sophia combines classical French techniques with Asian influences, creating desserts that are both visually stunning and incredibly delicious. Her signature style focuses on seasonal ingredients and innovative flavor combinations.',
     specialties: ['French Classical Pastries', 'Modern Dessert Plating', 'Chocolate Art', 'Seasonal Fruit Preparations'],
     awards: ['Best Pastry Chef 2020', 'Dessert Innovation 2021'],
-    image: '/placeholder.jpg'
+    image: '/placeholder.webp'
   },
   {
     id: '4',
@@ -51,7 +51,7 @@ const chefsData = [
     longBio: 'Marcus Johnson\'s grilling expertise comes from years of mastering different techniques across cultures. From Argentine asado to Japanese yakitori, from American barbecue to Mediterranean grilling, Marcus has studied under masters worldwide. His approach emphasizes understanding each ingredient\'s unique characteristics and matching them with appropriate heat, timing, and seasoning. Marcus believes that great grilling is about patience, precision, and respect for the ingredients.',
     specialties: ['Dry-Aged Steaks', 'Whole Animal Preparation', 'Wood-Fired Vegetables', 'Sauce Development'],
     awards: ['Best Grill Chef 2019', 'BBQ Master 2020'],
-    image: '/placeholder.jpg'
+    image: '/placeholder.webp'
   }
 ];
 

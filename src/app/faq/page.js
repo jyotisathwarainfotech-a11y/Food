@@ -40,11 +40,11 @@ const faqData = [
 
 const images = [
     "/images/roll1.webp",
-    "/images/roll2.jpg",
-    "/images/home2.jpg",
-    "/images/home3.jpg",
-    "/images/img2.jpg",
-    "/images/home2.jpg",
+    "/images/roll2.webp",
+    "/images/home2.webp",
+    "/images/home3.webp",
+    "/images/img2.webp",
+    "/images/home2.webp",
   ];
 
 export default function FAQPage() {

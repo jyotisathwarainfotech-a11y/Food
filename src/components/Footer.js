@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="lg:col-span-1">
   <div className="flex items-center gap-3 mb-4">
     <img
-      src="/footer.png"
+      src="/footer.webp"
       alt="FoodZentro Logo"
       className="w-12 h-12 object-contain"
     />

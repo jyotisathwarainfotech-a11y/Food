@@ -4,34 +4,34 @@ import Image from "next/image";
 /* ================= MENU DATA ================= */
 
 const pizzaMenu = [
-  { id: 1, name: "Margherita Pizza", desc: "Cheese, fresh basil", price: 20.99, img: "/images/pizza1.png" },
-  { id: 2, name: "Pepperoni Pizza", desc: "Spicy pepperoni, mozzarella", price: 25.99, img: "/images/pizza2.png" },
-  { id: 3, name: "Farmhouse Pizza", desc: "Onion, capsicum, mushroom", price: 22.99, img: "/images/pizza3.png" },
-  { id: 4, name: "Paneer Pizza", desc: "Cheese, paneer, fresh basil", price: 20.99, img: "/images/pizza4.png" },
-  { id: 5, name: "Veggie Pizza", desc: "Onion, capsicum, mushroom, cheese", price: 22.99, img: "/images/pizza5.png" },
+  { id: 1, name: "Margherita Pizza", desc: "Cheese, fresh basil", price: 20.99, img: "/images/pizza1.webp" },
+  { id: 2, name: "Pepperoni Pizza", desc: "Spicy pepperoni, mozzarella", price: 25.99, img: "/images/pizza2.webp" },
+  { id: 3, name: "Farmhouse Pizza", desc: "Onion, capsicum, mushroom", price: 22.99, img: "/images/pizza3.webp" },
+  { id: 4, name: "Paneer Pizza", desc: "Cheese, paneer, fresh basil", price: 20.99, img: "/images/pizza4.webp" },
+  { id: 5, name: "Veggie Pizza", desc: "Onion, capsicum, mushroom, cheese", price: 22.99, img: "/images/pizza5.webp" },
 ];
 
 const burgerMenu = [
-  { id: 1, name: "Classic Burger", desc: "Beef patty, cheese", price: 12.99, img: "/images/home.png" },
-  { id: 2, name: "Chicken Burger", desc: "Grilled chicken, mayo", price: 14.99, img: "/images/burger5.png" },
-  { id: 3, name: "Cheese Blast Burger", desc: "Double cheese, onion", price: 16.99, img: "/images/burger3.png" },
-  { id: 4, name: "Double Cheese Burger", desc: "Double cheese, onion", price: 18.99, img: "/images/burger4.png" },
+  { id: 1, name: "Classic Burger", desc: "Beef patty, cheese", price: 12.99, img: "/images/home.webp" },
+  { id: 2, name: "Chicken Burger", desc: "Grilled chicken, mayo", price: 14.99, img: "/images/burger5.webp" },
+  { id: 3, name: "Cheese Blast Burger", desc: "Double cheese, onion", price: 16.99, img: "/images/burger3.webp" },
+  { id: 4, name: "Double Cheese Burger", desc: "Double cheese, onion", price: 18.99, img: "/images/burger4.webp" },
 ];
 
 const sushiMenu = [
-  { id: 1, name: "Rainbow Roll", desc: "Assorted vegetables, rice", price: 10.99, img: "/images/sushi1.png" },
-  { id: 2, name: "California Roll", desc: "Assorted seafood, rice", price: 10.99, img: "/images/sushi2.jpg" },
-  { id: 3, name: "Tuna Roll", desc: "Assorted seafood, rice", price: 10.99, img: "/images/sushi3.jpg" },
-  { id: 4, name: "Spicy Tuna Roll", desc: "Assorted seafood, rice", price: 10.99, img: "/images/sushi4.jpg" },
+  { id: 1, name: "Rainbow Roll", desc: "Assorted vegetables, rice", price: 10.99, img: "/images/sushi1.webp" },
+  { id: 2, name: "California Roll", desc: "Assorted seafood, rice", price: 10.99, img: "/images/sushi2.webp" },
+  { id: 3, name: "Tuna Roll", desc: "Assorted seafood, rice", price: 10.99, img: "/images/sushi3.webp" },
+  { id: 4, name: "Spicy Tuna Roll", desc: "Assorted seafood, rice", price: 10.99, img: "/images/sushi4.webp" },
 ];
 
 const images = [
   "/images/roll1.webp",
-  "/images/roll2.jpg",
-  "/images/home2.jpg",
-  "/images/home3.jpg",
-  "/images/img2.jpg",
-  "/images/home2.jpg",
+  "/images/roll2.webp",
+  "/images/home2.webp",
+  "/images/home3.webp",
+  "/images/img2.webp",
+  "/images/home2.webp",
 ];
 
 /* ================= REUSABLE SECTION ================= */
@@ -50,7 +50,7 @@ function MenuSection({ title, highlight, data }) {
         rounded-full overflow-hidden 
         border-[18px] border-white"
       >
-        <Image src="/images/left1.jpg" alt="food" fill className="object-cover" />
+        <Image src="/images/left1.webp" alt="food" fill className="object-cover" />
       </div>
 
       {/* RIGHT ROUND IMAGE */}
@@ -63,7 +63,7 @@ function MenuSection({ title, highlight, data }) {
         rounded-full overflow-hidden 
         border-[18px] border-white"
       >
-        <Image src="/images/right1.jpg" alt="food" fill className="object-cover" />
+        <Image src="/images/right1.webp" alt="food" fill className="object-cover" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

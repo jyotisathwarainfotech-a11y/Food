@@ -27,7 +27,7 @@ const categories = [
 //     price: 89.99,
 //     originalPrice: 99.99,
 //     description: 'Curated selection of our signature dishes perfect for gifting',
-//     image: '/images/bg1.jpg',
+//     image: '/images/bg1.webp',
 //     rating: 4.8,
 //     reviews: 124,
 //     inStock: true,
@@ -50,7 +50,7 @@ const categories = [
 //     category: 'beverages',
 //     price: 18.99,
 //     description: 'Premium coffee beans roasted specifically for our restaurant',
-//     image: '/images/blog3.jpg',
+//     image: '/images/blog3.webp',
 //     rating: 4.7,
 //     reviews: 156,
 //     inStock: true
@@ -73,7 +73,7 @@ const categories = [
 //     category: 'merchandise',
 //     price: 34.99,
 //     description: 'Recipes and stories from our kitchen',
-//     image: '/images/home2.jpg',
+//     image: '/images/home2.webp',
 //     rating: 4.9,
 //     reviews: 203,
 //     inStock: true
@@ -84,7 +84,7 @@ const categories = [
 //     category: 'beverages',
 //     price: 129.99,
 //     description: 'Curated selection of premium wines from local vineyards',
-//     image: '/images/home3.jpg',
+//     image: '/images/home3.webp',
 //     rating: 4.8,
 //     reviews: 78,
 //     inStock: true
@@ -96,7 +96,7 @@ const categories = [
 //     category: 'gift-cards',
 //     price: 50.00,
 //     description: 'Perfect for any occasion',
-//     image: '/images/img2.jpg',
+//     image: '/images/img2.webp',
 //     rating: 5.0,
 //     reviews: 0,
 //     inStock: true
@@ -107,21 +107,21 @@ const categories = [
 //     category: 'merchandise',
 //     price: 75.00,
 //     description: 'Learn cooking techniques from our chefs',
-//     image: '/images/img3.jpg',
+//     image: '/images/img3.webp',
 //     rating: 4.9,
 //     reviews: 45,
 //     inStock: true
 //   }
 // ];
 const products = [
-  { id: 1, name: "Burger Deluxe", image: "/images/sell1.png", price: "$110.46" },
-  { id: 2, name: "Fried Chicken", image: "/images/sell2.png", price: "$60.50" },
-  { id: 3, name: "Spicy Wings", image: "/images/sell3.png", price: "$50.00" },
-  { id: 4, name: "Italian Pizza", image: "/images/sell4.jpg", price: "$80.00" },
-  { id: 5, name: "Pasta Special", image: "/images/sell5.jpg", price: "$95.00" },
-   { id: 6, name: "Burger Deluxe", image: "/images/sell1.png", price: "$110.46" },
-  { id: 7, name: "Fried Chicken", image: "/images/sell2.png", price: "$60.50" },
-  { id: 8, name: "Spicy Wings", image: "/images/sell3.png", price: "$50.00" },
+  { id: 1, name: "Burger Deluxe", image: "/images/sell1.webp", price: "$110.46" },
+  { id: 2, name: "Fried Chicken", image: "/images/sell2.webp", price: "$60.50" },
+  { id: 3, name: "Spicy Wings", image: "/images/sell3.webp", price: "$50.00" },
+  { id: 4, name: "Italian Pizza", image: "/images/sell4.webp", price: "$80.00" },
+  { id: 5, name: "Pasta Special", image: "/images/sell5.webp", price: "$95.00" },
+   { id: 6, name: "Burger Deluxe", image: "/images/sell1.webp", price: "$110.46" },
+  { id: 7, name: "Fried Chicken", image: "/images/sell2.webp", price: "$60.50" },
+  { id: 8, name: "Spicy Wings", image: "/images/sell3.webp", price: "$50.00" },
  
 ];
 

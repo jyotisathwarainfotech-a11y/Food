@@ -24,7 +24,7 @@ const blogPosts = [
     date: '2024-01-15',
     author: 'Chef Marcus Johnson',
     category: 'Cooking Tips',
-    image: '/placeholder.jpg',
+    image: '/placeholder.webp',
     readTime: '5 min read',
     tags: ['grilling', 'cooking tips', 'meat', 'techniques']
   },
@@ -48,7 +48,7 @@ const blogPosts = [
     date: '2024-01-12',
     author: 'Chef Maria Rodriguez',
     category: 'Health & Nutrition',
-    image: '/placeholder.jpg',
+    image: '/placeholder.webp',
     readTime: '7 min read',
     tags: ['health', 'nutrition', 'seasonal', 'sustainability']
   }
